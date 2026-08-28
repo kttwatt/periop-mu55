@@ -36,7 +36,7 @@ let mm;
 document.addEventListener("DOMContentLoaded",()=>{
   const T=new window.markmap.Transformer();
   const {root}=T.transform(md);
-  mm=window.markmap.Markmap.create("#mindmap",{color:()=>"#7fd1ff",autoFit:true,fitRatio:0.9,duration:400,maxWidth:340,spacingVertical:8,spacingHorizontal:80},root);
+  mm=window.markmap.Markmap.create("#mindmap",{color:()=>"#7fd1ff",autoFit:true,fitRatio:1,duration:400,maxWidth:300,spacingVertical:12,spacingHorizontal:40},root);
   // cross-link: click mindmap node -> scroll right pane to matching heading
   const norm=s=>(s||"").toLowerCase().replace(/[#\s\-–—:;,()\[\]{}"']/g,"");
   const heads=[...document.querySelectorAll(".pane-summary h2,.pane-summary h3")];
