@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes — สรุปการเรียน</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --bg-card: #161c24;
+    --accent: #7fd1ff;
+    --text: #dce6ee;
+    --text-dim: #8a97a5;
+    --border: #23303c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Sarabun", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 40px 20px 60px; }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+  nav a:hover { border-color: var(--accent); }
+  h1 {
+    font-size: 1.6rem;
+    margin: 0 0 30px;
+    color: var(--accent);
+  }
+  .subject-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .subject-card h2 {
+    margin: 0 0 4px;
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+  .subject-card .date {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin: 0 0 16px;
+  }
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .links a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 10px 14px;
+    background: #10161d;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .links a:hover { color: var(--accent); border-color: var(--accent); }
+  .placeholder {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    padding: 16px;
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a href="../index.html">← หน้าแรก</a>
+    <a href="../schedule/index.html">🗓️ ตารางเรียน</a>
+  </nav>
+
+  <h1>Notes — สรุปการเรียน</h1>
+
+  <div class="subject-card">
+    <h2>สมรรถนะพยาบาลห้องผ่าตัด (Competency Development for Perioperative Nurses)</h2>
+    <p class="date">ศ. 28 ส.ค. 69</p>
+    <div class="links">
+      <a href="2026-08-28-competency-or.html">สรุป + Interactive Mindmap</a>
+      <a href="../competency/2026-08-28-competency-in-or.html">สรุป (HTML อ่านจอ)</a>
+      <a href="../competency/2026-08-28-competency-in-or-flash.md">Flashcard (67 การ์ด)</a>
+      <a href="../competency/2026-08-28-competency-in-or.mmd">Mindmap (มาร์คมี)</a>
+    </div>
+  </div>
+
+  <p class="placeholder">รายการจะเพิ่มเมื่อมีสรุปใหม่ (Cost Analysis, ODS, Risk management ฯลฯ)</p>
+</div>
+</body>
+</html>
