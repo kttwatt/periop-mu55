@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mindmap: สมรรถนะพยาบาลห้องผ่าตัด</title>
+<script src="https://cdn.jsdelivr.net/npm/d3@6"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.15/dist/browser/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15/dist/browser/index.js"></script>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #0f1419;
+    color: #e8eef7;
+    font-family: "Sarabun", "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 22px;
+    background: #141b23;
+    border-bottom: 1px solid #23303d;
+    box-sizing: border-box;
+  }
+
+  header h1 {
+    font-size: 1.05rem;
+    margin: 0;
+    font-weight: 600;
+    color: #e8eef7;
+  }
+
+  header h1 .sub {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #8fa3bd;
+    margin-top: 2px;
+  }
+
+  .links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .links a {
+    color: #7fd1ff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border: 1px solid #2a3b4d;
+    border-radius: 6px;
+    background: #182028;
+    transition: background 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+
+  .links a:hover {
+    background: #1f2a35;
+    border-color: #7fd1ff;
+  }
+
+  #mindmap {
+    width: 100%;
+    height: calc(100% - 66px);
+    display: block;
+    background: #0f1419;
+  }
+
+  .markmap-node > circle {
+    fill: #0f1419;
+    stroke-width: 1.5px;
+  }
+
+  .markmap-node text {
+    fill: #e8eef7;
+  }
+
+  .markmap-link {
+    fill: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a3b4d;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>
+    สรุปการเรียน: สมรรถนะพยาบาลห้องผ่าตัด
+    <span class="sub">Competency Development for Perioperative Nurses — Interactive Mindmap</span>
+  </h1>
+  <div class="links">
+    <a href="https://github.com/kttwatt/pykhr627-notes" target="_blank" rel="noopener">📁 กลับไป Repo</a>
+    <a href="competency/2026-08-28-competency-in-or.html">📄 หน้าสรุป HTML</a>
+  </div>
+</header>
+
+<svg id="mindmap"></svg>
+
+<script>
+const markdownSource = [
+  "# สมรรถนะพยาบาลห้องผ่าตัด Competency Development for Perioperative Nurses",
+  "## สรุปตามลำดับหน้า",
+  "### หน้า 1 — ปกเรื่อง สไลด์",
+  "### หน้า 2 — โครงเรื่อง Outline สไลด์",
+  "### หน้า 3–5 — ที่มาของแนวคิด Competency และนิยาม สไลด์",
+  "### หน้า 6–7 — ไม่มีข้อความ/เป็นภาพ สไลด์",
+  "### หน้า 8–9 — นิยามเพิ่มเติมของ Competency สไลด์",
+  "### หน้า 10–12 — ไม่มีข้อความ/เป็นภาพ สไลด์",
+  "### หน้า 13–17 — สมรรถนะพยาบาลห้องผ่าตัด 4 ด้าน สไลด์",
+  "### หน้า 22 — นิยามการประเมิน Competency สไลด์",
+  "### หน้า 23 — ไม่มีข้อความ/เป็นภาพ สไลด์",
+  "### หน้า 24–27 — ประเภทของ Competency 3 ประเภท สไลด์",
+  "### ตัวอย่าง Core Competency ที่ยกในสไลด์: ความคิดริเริ่มสร้างสรรค์, การคิดเชิงวิเคราะห์ หน้า 26",
+  "### หน้า 29: ไม่มีข้อความ/เป็นภาพ",
+  "### หน้า 38 — โครงสร้างหน่วยผ่าตัด กลุ่มที่ 1 สไลด์",
+  "### หน้า 39 — สมรรถนะที่เกี่ยวกับห้องพักฟื้น PACU สไลด์",
+  "### หน้า 41 — หลักการกำหนดชนิดหัตถการและการประเมิน สไลด์",
+  "### Novice: 0-1 ปี",
+  "### Advance beginner: 1-2 ปี",
+  "### Competent: 2-3 ปี",
+  "### Proficient: 3-5 ปี",
+  "### Expert: 5 ปีขึ้นไป",
+  "### PL2: มีความรู้เกี่ยวกับโรคและแนวทางการรักษาที่อยู่ในขอบเขตบริการของหน่วยงาน ตรงกับ หน้า 48",
+  "### หน้า 44 — ไม่มีข้อความ/เป็นภาพ สไลด์",
+  "### หน้า 53 — โครงการวิจัยอ้างอิง สไลด์",
+  "### หน้า 64 — ไม่มีข้อความ/เป็นภาพ สไลด์",
+  "### หน้า 73–74 — ไม่มีข้อความ/เป็นภาพ สไลด์",
+  "### หน้า 75 — Training & Development สไลด์",
+  "### หน้า 76 — การพัฒนา Technical skill สไลด์",
+  "### หน้า 77 — ไม่มีข้อความ/เป็นภาพ หน้าสุดท้าย สไลด์",
+  "## ประเด็นหลัก",
+  "## ตารางสรุป",
+  "### 📋 ตาราง: หมวดสมรรถนะ/ทักษะ",
+  "## จุดที่มักออกสอบ / สับสน",
+  "## สรุปย่อ Executive Summary",
+  ""
+].join("\n");
+
+document.addEventListener("DOMContentLoaded", () => {
+  const { Transformer } = window.markmap;
+  const { Markmap, deriveOptions } = window.markmap;
+
+  const transformer = new Transformer();
+  const { root, frontmatter } = transformer.transform(markdownSource);
+  const opts = deriveOptions(frontmatter && frontmatter.markmap);
+
+  const mm = Markmap.create(
+    "#mindmap",
+    {
+      ...opts,
+      color: () => "#7fd1ff",
+      duration: 400,
+      maxWidth: 320,
+      spacingVertical: 8,
+      spacingHorizontal: 90,
+      autoFit: true,
+      fitRatio: 0.9,
+    },
+    root
+  );
+
+  window.addEventListener("resize", () => mm.fit());
+});
+</script>
+
+</body>
+</html>
