@@ -10,6 +10,12 @@
 
 ## 📂 สรุปตามวิชา
 
+### ❤️ Acquired Heart Disease & Aortic Disease (OR Nurse) — ศ. 11 ก.ย. 2569 (อ.นพ.อังศุธร)
+- 🌐 [เปิด HTML](heart-aortic/2026-09-11-heart-aortic-disease.html)
+- 📄 [สรุป .md](heart-aortic/2026-09-11-heart-aortic-disease.md)
+- 🧠 [Mindmap .mmd](heart-aortic/2026-09-11-heart-aortic-disease.mmd)
+- 🎴 [Flashcard .md](heart-aortic/2026-09-11-heart-aortic-disease-flash.md) · [Flashcard .csv (Anki)](heart-aortic/2026-09-11-heart-aortic-disease-flash.csv)
+
 ### 🏥≋ สมรรถนะพยาบาลห้องผ่าตัด (Competency Development for Perioperative Nurses) — ศ. 28 ส.ค. 2569
 - 🌐 **เปิด HTML ของบราว์เซอร์:** [competency → 2026-08-28-competency-in-or.html](competency/2026-08-28-competency-in-or.html)
 - 📄 [สรุป .md](competency/2026-08-28-competency-in-or.md)
