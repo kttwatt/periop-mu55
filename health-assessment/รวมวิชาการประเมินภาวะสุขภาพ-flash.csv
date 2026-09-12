@@ -61,6 +61,17 @@ Tonsils/Pharynx	ไม่บวมแดง	สรุปรวมวิชาก
 Hard palate	ชมพู/เหลืองอ่อนเรียบ	สรุปรวมวิชาการประเมินภาวะสุขภาพ
 Inspect	สมมาตร, ไม่มีก้อน/เส้นเลือดโป่ง (JVD)	สรุปรวมวิชาการประเมินภาวะสุขภาพ
 Palpation	Trachea กึ่งกลาง, thyroid ไม่โต ไม่กดเจ็บ; Trachea เบี่ยง/thyroid โต	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**Weber vs Rinne**	Weber=เทียบ 2 หู (หูไหนเสีย); Rinne=เทียบ AC vs BC หูเดียวกัน (เสียแบบไหน)	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**Rinne Positive/Negative**	Positive=ปกติ(AC>BC); **Negative=wrong=conductive loss** (ตรงข้ามสามัญสำนึก)	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**Weber lateralize**	Conductive→เสียงดังไปหูไม่ดี; Sensorineural→เสียงดังไปหูดี	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**Direct vs Consensual**	Direct=CN II ข้างที่ส่อง; Consensual=CN III ข้างตรงข้าม	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**VAcc vs VAsc**	cc=with correction, sc=without correction	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**Petechia/Purpura/Ecchymosis**	1–3mm / 3–10mm / ใหญ่กว่า (เล็ก→ใหญ่)	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**Papule/Nodule/Tumor**	<0.5cm / >0.5cm / >2cm	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**Macule vs Patch**	Patch = Macule >1cm	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**Vesicle vs Bulla**	ตัดที่ 0.5cm	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**Erosion vs Ulcer**	Erosion=epidermis ตื้น; Ulcer=ลึกถึง dermis	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**LN mobile/fixed**	Mobile→ติดเชื้อ; Hard fixed→มะเร็ง/พังผืด	สรุปรวมวิชาการประเมินภาวะสุขภาพ
 Normal adult	1:2	สรุปรวมวิชาการประเมินภาวะสุขภาพ
 **Barrel chest** (อกถัง)	~1:1	สรุปรวมวิชาการประเมินภาวะสุขภาพ
 **Funnel chest** (Pectus excavatum)	AP ลดลง	สรุปรวมวิชาการประเมินภาวะสุขภาพ
@@ -87,6 +98,21 @@ Vesicular	เบา ทุ้ม คล้ายลมพัดใบไม้	�
 **Rales fine**	Moist	สรุปรวมวิชาการประเมินภาวะสุขภาพ
 **Rales medium**	Moist	สรุปรวมวิชาการประเมินภาวะสุขภาพ
 **Rales coarse**	Moist	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Aortic area	Aortic stenosis/regurgitation	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Pulmonic area	Pulmonic stenosis/regurgitation	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Tricuspid area	Tricuspid stenosis/regurgitation	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Mitral area	Mitral stenosis/regurgitation	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Peripheral pulse	Carotid, Brachial, Radial, Femoral, Popliteal, Dorsalis pedis	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**S1**	**Mitral + Tricuspid**	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+**S2**	**Pulmonary + Aortic**	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Aortic	Stenosis	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Aortic	Regurgitation	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Pulmonic	Stenosis	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Pulmonic	Regurgitation	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Tricuspid	Stenosis	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Tricuspid	Regurgitation	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Mitral	Stenosis	สรุปรวมวิชาการประเมินภาวะสุขภาพ
+Mitral	Regurgitation	สรุปรวมวิชาการประเมินภาวะสุขภาพ
 ข้อมูล: Subjective (patient) / Objective (สังเกต-เวชระเบียน) · แหล่ง	ผู้ป่วย, ครอบครัว, บันทึกแพทย์, ทีมสุขภาพ, LAB, ผลทดสอบจิตวิทยา, บันทึกการพยาบาล	สรุปรวมวิชาการประเมินภาวะสุขภาพ
 **Bizarre appearance**	จิตเภท, บุคลิกภาพผิดปกติ	สรุปรวมวิชาการประเมินภาวะสุขภาพ
 **Over-bright clothing**	Mania	สรุปรวมวิชาการประเมินภาวะสุขภาพ

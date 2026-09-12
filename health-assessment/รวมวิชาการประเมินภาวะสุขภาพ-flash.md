@@ -1,6 +1,6 @@
 # Flashcard: ⭐ ตอนที่ 5 — ตารางรวมจุดที่มักออกสอบ (เจาะทุกคาบ)
 
-จำนวน 113 การ์ด
+จำนวน 139 การ์ด
 
 **1. เป้าหมาย**
    ประเมินภาวะสุขภาพ → วินิจฉัยปัญหา → วางแผน/ให้การพยาบาล โดยใช้ **Nursing Process** เพื่อความปลอดภัยผู้ป่วยผ่าตัดทุกระยะ `[สไลด์]`  — [1.1 ความสำคัญและขอบเขต (★★★)]
@@ -191,152 +191,230 @@
 **63. Palpation**
    Trachea กึ่งกลาง, thyroid ไม่โต ไม่กดเจ็บ; Trachea เบี่ยง/thyroid โต  — [2.6 คอ (Neck) ★★]
 
-**64. Normal adult**
+**64. **Weber vs Rinne****
+   Weber=เทียบ 2 หู (หูไหนเสีย); Rinne=เทียบ AC vs BC หูเดียวกัน (เสียแบบไหน)  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**65. **Rinne Positive/Negative****
+   Positive=ปกติ(AC>BC); **Negative=wrong=conductive loss** (ตรงข้ามสามัญสำนึก)  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**66. **Weber lateralize****
+   Conductive→เสียงดังไปหูไม่ดี; Sensorineural→เสียงดังไปหูดี  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**67. **Direct vs Consensual****
+   Direct=CN II ข้างที่ส่อง; Consensual=CN III ข้างตรงข้าม  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**68. **VAcc vs VAsc****
+   cc=with correction, sc=without correction  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**69. **Petechia/Purpura/Ecchymosis****
+   1–3mm / 3–10mm / ใหญ่กว่า (เล็ก→ใหญ่)  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**70. **Papule/Nodule/Tumor****
+   <0.5cm / >0.5cm / >2cm  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**71. **Macule vs Patch****
+   Patch = Macule >1cm  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**72. **Vesicle vs Bulla****
+   ตัดที่ 0.5cm  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**73. **Erosion vs Ulcer****
+   Erosion=epidermis ตื้น; Ulcer=ลึกถึง dermis  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**74. **LN mobile/fixed****
+   Mobile→ติดเชื้อ; Hard fixed→มะเร็ง/พังผืด  — [2.7 คู่ที่มักสับสน (★★★)]
+
+**75. Normal adult**
    1:2  — [3.1 Inspection: รูปร่างทรวงอก ★★★]
 
-**65. **Barrel chest** (อกถัง)**
+**76. **Barrel chest** (อกถัง)**
    ~1:1  — [3.1 Inspection: รูปร่างทรวงอก ★★★]
 
-**66. **Funnel chest** (Pectus excavatum)**
+**77. **Funnel chest** (Pectus excavatum)**
    AP ลดลง  — [3.1 Inspection: รูปร่างทรวงอก ★★★]
 
-**67. **Pigeon chest** (Pectus carinatum)**
+**78. **Pigeon chest** (Pectus carinatum)**
    AP กว้างขึ้น  — [3.1 Inspection: รูปร่างทรวงอก ★★★]
 
-**68. Postural Kyphosis**
+**79. Postural Kyphosis**
    วัยรุ่น (ท่าทาง ยืดหยุ่นได้)  — [3.1 Inspection: รูปร่างทรวงอก ★★★]
 
-**69. Scheuermann's (Juvenile)**
+**80. Scheuermann's (Juvenile)**
    วัยรุ่น (vertebral wedging)  — [3.1 Inspection: รูปร่างทรวงอก ★★★]
 
-**70. Congenital**
+**81. Congenital**
    เด็ก  — [3.1 Inspection: รูปร่างทรวงอก ★★★]
 
-**71. Age-related/Degenerative**
+**82. Age-related/Degenerative**
    ผู้สูงอายุ (กระดูกพรุน ยุบ)  — [3.1 Inspection: รูปร่างทรวงอก ★★★]
 
-**72. **Tachypnea****
+**83. **Tachypnea****
    >24  — [3.2 Respiratory rate & pattern ผิดปกติ ★]
 
-**73. **Hyperventilation****
+**84. **Hyperventilation****
    >24  — [3.2 Respiratory rate & pattern ผิดปกติ ★]
 
-**74. **Bradypnea****
+**85. **Bradypnea****
    <10  — [3.2 Respiratory rate & pattern ผิดปกติ ★]
 
-**75. **Hypoventilation****
+**86. **Hypoventilation****
    <10  — [3.2 Respiratory rate & pattern ผิดปกติ ★]
 
-**76. Dyspnea**
+**87. Dyspnea**
    -  — [3.2 Respiratory rate & pattern ผิดปกติ ★]
 
-**77. Cheyne-Stokes**
+**88. Cheyne-Stokes**
    variable  — [3.2 Respiratory rate & pattern ผิดปกติ ★]
 
-**78. Kussmaul**
+**89. Kussmaul**
    -  — [3.2 Respiratory rate & pattern ผิดปกติ ★]
 
-**79. Orthopnea**
+**90. Orthopnea**
    -  — [3.2 Respiratory rate & pattern ผิดปกติ ★]
 
-**80. Sighing**
+**91. Sighing**
    -  — [3.2 Respiratory rate & pattern ผิดปกติ ★]
 
-**81. Bronchial**
+**92. Bronchial**
    ดัง ก้อง สูง  — [3.5 Auscultation — เสียงหายใจปกติ ★★★]
 
-**82. Bronchovesicular**
+**93. Bronchovesicular**
    กลาง  — [3.5 Auscultation — เสียงหายใจปกติ ★★★]
 
-**83. Vesicular**
+**94. Vesicular**
    เบา ทุ้ม คล้ายลมพัดใบไม้  — [3.5 Auscultation — เสียงหายใจปกติ ★★★]
 
-**84. **Stridor****
+**95. **Stridor****
    Dry  — [3.5 Auscultation — เสียงหายใจปกติ ★★★]
 
-**85. **Rhonchi****
+**96. **Rhonchi****
    Dry  — [3.5 Auscultation — เสียงหายใจปกติ ★★★]
 
-**86. **Pleural friction rub****
+**97. **Pleural friction rub****
    Dry  — [3.5 Auscultation — เสียงหายใจปกติ ★★★]
 
-**87. **Rales fine****
+**98. **Rales fine****
    Moist  — [3.5 Auscultation — เสียงหายใจปกติ ★★★]
 
-**88. **Rales medium****
+**99. **Rales medium****
    Moist  — [3.5 Auscultation — เสียงหายใจปกติ ★★★]
 
-**89. **Rales coarse****
+**100. **Rales coarse****
    Moist  — [3.5 Auscultation — เสียงหายใจปกติ ★★★]
 
-**90. ข้อมูล: Subjective (patient) / Objective (สังเกต-เวชระเบียน) · แหล่ง**
+**101. Aortic area**
+   Aortic stenosis/regurgitation  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**102. Pulmonic area**
+   Pulmonic stenosis/regurgitation  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**103. Tricuspid area**
+   Tricuspid stenosis/regurgitation  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**104. Mitral area**
+   Mitral stenosis/regurgitation  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**105. Peripheral pulse**
+   Carotid, Brachial, Radial, Femoral, Popliteal, Dorsalis pedis  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**106. **S1****
+   **Mitral + Tricuspid**  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**107. **S2****
+   **Pulmonary + Aortic**  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**108. Aortic**
+   Stenosis  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**109. Aortic**
+   Regurgitation  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**110. Pulmonic**
+   Stenosis  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**111. Pulmonic**
+   Regurgitation  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**112. Tricuspid**
+   Stenosis  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**113. Tricuspid**
+   Regurgitation  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**114. Mitral**
+   Stenosis  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**115. Mitral**
+   Regurgitation  — [3.6 Cardiovascular System (Inspect–Palp–]
+
+**116. ข้อมูล: Subjective (patient) / Objective (สังเกต-เวชระเบียน) · แหล่ง**
    ผู้ป่วย, ครอบครัว, บันทึกแพทย์, ทีมสุขภาพ, LAB, ผลทดสอบจิตวิทยา, บันทึกการพยาบาล  — [4.3 วิธีรวบรวมข้อมูล (★★★)]
 
-**91. **Bizarre appearance****
+**117. **Bizarre appearance****
    จิตเภท, บุคลิกภาพผิดปกติ  — [4.4 องค์ประกอบ 5 มิติ (★★★)]
 
-**92. **Over-bright clothing****
+**118. **Over-bright clothing****
    Mania  — [4.4 องค์ประกอบ 5 มิติ (★★★)]
 
-**93. **Poor grooming****
+**119. **Poor grooming****
    จิตเภท, ซึมเศร้า  — [4.4 องค์ประกอบ 5 มิติ (★★★)]
 
-**94. ผล**
+**120. ผล**
    เปลี่ยนบทบาท, วิตกกังวลสุขภาพ  — [4.4 องค์ประกอบ 5 มิติ (★★★)]
 
-**95. Value-belief-spiritual pattern**
+**121. Value-belief-spiritual pattern**
    เป้าหมายชีวิต ความหวัง ความเชื่อ/ศาสนา/กิจกรรม  — [4.4 องค์ประกอบ 5 มิติ (★★★)]
 
-**96. **20/20 ฟุต = 6/6 เมตร****
+**122. **20/20 ฟุต = 6/6 เมตร****
    Visual acuity ปกติ  — [ตัวเลขที่ต้องจำแม่น]
 
-**97. **20/30****
+**123. **20/30****
    Threshold ใช้ Pinhole test  — [ตัวเลขที่ต้องจำแม่น]
 
-**98. **2 ฟุต****
+**124. **2 ฟุต****
    ระยะยืน Whispering test  — [ตัวเลขที่ต้องจำแม่น]
 
-**99. **≤20%****
+**125. **≤20%****
    Pupil size ต่างกันถือปกติ  — [ตัวเลขที่ต้องจำแม่น]
 
-**100. **Temporal 95°****
+**126. **Temporal 95°****
    Visual field กว้างสุด  — [ตัวเลขที่ต้องจำแม่น]
 
-**101. **512 / 256 Hz****
+**127. **512 / 256 Hz****
    Tuning fork  — [ตัวเลขที่ต้องจำแม่น]
 
-**102. **Maxillaryแรกเกิด/Ethmoid-Sphenoid 1ปี/Frontal 10ปี****
+**128. **Maxillaryแรกเกิด/Ethmoid-Sphenoid 1ปี/Frontal 10ปี****
    ลำดับไซนัส  — [ตัวเลขที่ต้องจำแม่น]
 
-**103. **1 cm****
+**129. **1 cm****
    ต่อมน้ำเหลืองปกติ  — [ตัวเลขที่ต้องจำแม่น]
 
-**104. **16-18 / 6-8 เดือน****
+**130. **16-18 / 6-8 เดือน****
    Anterior / Posterior fontanel ปิด  — [ตัวเลขที่ต้องจำแม่น]
 
-**105. **71.4 kg****
+**131. **71.4 kg****
    Cutoff supine→supine เคลื่อนย้าย  — [ตัวเลขที่ต้องจำแม่น]
 
-**106. **33 kg****
+**132. **33 kg****
    Cutoff supine→prone เคลื่อนย้าย  — [ตัวเลขที่ต้องจำแม่น]
 
-**107. **15.80%****
+**133. **15.80%****
    ผู้ป่วยผ่าตัดเสี่ยงทุพโภชนาการ  — [ตัวเลขที่ต้องจำแม่น]
 
-**108. **ASIA 0.06-0.08 / 0.27-0.4 / 1.8-4.3 / 7.8-2.3 / 9.4-5.1 / 100****
+**134. **ASIA 0.06-0.08 / 0.27-0.4 / 1.8-4.3 / 7.8-2.3 / 9.4-5.1 / 100****
    อัตราตาย ASA 1-6  — [ตัวเลขที่ต้องจำแม่น]
 
-**109. **CCI 0/1-2/3-4/5+****
+**135. **CCI 0/1-2/3-4/5+****
    Low/Moderate/High risk  — [ตัวเลขที่ต้องจำแม่น]
 
-**110. **ICS 1-4 resonance, ICS 5 dull, ICS 6 flat****
+**136. **ICS 1-4 resonance, ICS 5 dull, ICS 6 flat****
    ตำแหน่งเคาะปอด  — [ตัวเลขที่ต้องจำแม่น]
 
-**111. **PMI เกิน ICS 6****
+**137. **PMI เกิน ICS 6****
    Cardiomegaly  — [ตัวเลขที่ต้องจำแม่น]
 
-**112. **Murmur grade ≥4****
+**138. **Murmur grade ≥4****
    คลำ thrill ได้  — [ตัวเลขที่ต้องจำแม่น]
 
-**113. **43% HT, 24.6% เลื่อนผ่าตัด****
+**139. **43% HT, 24.6% เลื่อนผ่าตัด****
    วิจัย จิตสังคม+HT  — [ตัวเลขที่ต้องจำแม่น]
