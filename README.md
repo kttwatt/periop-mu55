@@ -16,6 +16,23 @@
 - 🧠 [Mindmap .mmd](heart-aortic/2026-09-11-heart-aortic-disease.mmd)
 - 🎴 [Flashcard .md](heart-aortic/2026-09-11-heart-aortic-disease-flash.md) · [Flashcard .csv (Anki)](heart-aortic/2026-09-11-heart-aortic-disease-flash.csv)
 
+### 🧠 Neurology Navigator & Endoscopic Neurosurgery — พ. 16 ก.ย. 2569 (งานการพยาบาลผ่าตัด)
+1. **Navigator: Usage and maintenance (พว.ธนัชพร ผลทวีชัย)** 13.00–14.00
+   - 🌐 [เปิด HTML](neuro-navigator/2026-09-16-navigator-usage-maintenance.html)
+   - 📄 [สรุป .md](neuro-navigator/2026-09-16-navigator-usage-maintenance.md)
+   - 🧠 [Mindmap .mmd](neuro-navigator/2026-09-16-navigator-usage-maintenance.mmd)
+   - 🎴 [Flashcard .md](neuro-navigator/2026-09-16-navigator-usage-maintenance-flash.md) · [.csv (Anki)](neuro-navigator/2026-09-16-navigator-usage-maintenance-flash.csv)
+2. **Navigator: Apply to neurosurgery (พว.จันจิรา จารุพัตร)** 14.00–15.00
+   - 🌐 [เปิด HTML](neuro-navigator/2026-09-16-navigator-application-neurosurgery.html)
+   - 📄 [สรุป .md](neuro-navigator/2026-09-16-navigator-application-neurosurgery.md)
+   - 🧠 [Mindmap .mmd](neuro-navigator/2026-09-16-navigator-application-neurosurgery.mmd)
+   - 🎴 [Flashcard .md](neuro-navigator/2026-09-16-navigator-application-neurosurgery-flash.md) · [.csv (Anki)](neuro-navigator/2026-09-16-navigator-application-neurosurgery-flash.csv)
+3. **Endoscope in neurosurgery (พว.ธนพรรณ กุณาละสิริ)** 15.00–16.00
+   - 🌐 [เปิด HTML](neuro-navigator/2026-09-16-endoscopic-neurosurgery.html)
+   - 📄 [สรุป .md](neuro-navigator/2026-09-16-endoscopic-neurosurgery.md)
+   - 🧠 [Mindmap .mmd](neuro-navigator/2026-09-16-endoscopic-neurosurgery.mmd)
+   - 🎴 [Flashcard .md](neuro-navigator/2026-09-16-endoscopic-neurosurgery-flash.md) · [.csv (Anki)](neuro-navigator/2026-09-16-endoscopic-neurosurgery-flash.csv)
+
 ### 🏥≋ สมรรถนะพยาบาลห้องผ่าตัด (Competency Development for Perioperative Nurses) — ศ. 28 ส.ค. 2569
 - 🌐 **เปิด HTML ของบราว์เซอร์:** [competency → 2026-08-28-competency-in-or.html](competency/2026-08-28-competency-in-or.html)
 - 📄 [สรุป .md](competency/2026-08-28-competency-in-or.md)

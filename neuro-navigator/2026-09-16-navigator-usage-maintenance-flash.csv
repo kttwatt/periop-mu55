@@ -1,0 +1,30 @@
+แนวคิดนี้ถูกนำมาปรับใช้เป็น Neuronavigator ในห้องผ่าตัด	กล้องอินฟราเรดทำหน้าที่คล้ายดาวเทียม รับตำแหน่งจาก Reference frame ที่ติดผู้ป่วย/เครื่องมือ แล้วคอมพิวเตอร์ประมวลผลซ้อนตำแหน่งบนภาพ CT/MRI 3 มิติของผู้ป่วยแบบเรียลไทม์ [เสริม]	สรุป2026-09-16-navigator-usage-maintenance
+Brain lab	—	สรุป2026-09-16-navigator-usage-maintenance
+Medtronic Stealth Station	S7, S8	สรุป2026-09-16-navigator-usage-maintenance
+ใช้ช่วยผ่าตัด	**โรคพาร์กินสัน, โรคเนื้องอกสมอง, โรคฝีในสมอง, โรคทางกระดูกไขสันหลัง** [สไลด์][หน้า 19]	สรุป2026-09-16-navigator-usage-maintenance
+ตัวอย่าง	เนื้องอกสมองใกล้ตำแหน่ง Brainstem	สรุป2026-09-16-navigator-usage-maintenance
+1	System Hardware	สรุป2026-09-16-navigator-usage-maintenance
+2	Camera	สรุป2026-09-16-navigator-usage-maintenance
+3	Reference Frame (Active)	สรุป2026-09-16-navigator-usage-maintenance
+4	Reference Frame (Passive)	สรุป2026-09-16-navigator-usage-maintenance
+5	Probe (Active)	สรุป2026-09-16-navigator-usage-maintenance
+6	Probe (Passive)	สรุป2026-09-16-navigator-usage-maintenance
+7	ขาสำหรับยึดกับอุปกรณ์ยึดศีรษะ	สรุป2026-09-16-navigator-usage-maintenance
+8	Passive ball	สรุป2026-09-16-navigator-usage-maintenance
+9	CD	สรุป2026-09-16-navigator-usage-maintenance
+Set up Frame	แพทย์จัดท่าผู้ป่วยโดยใช้ **Mayfield** และติด Reference **Active** กับขาจับ Frame โดยหมุนเกลียวให้แน่น	สรุป2026-09-16-navigator-usage-maintenance
+Set up Camera	จัดตำแหน่งของ Camera ให้อยู่ในตำแหน่งที่สามารถเห็น Reference frame ได้ชัดเจน	สรุป2026-09-16-navigator-usage-maintenance
+Planning กำหนดจุด (Register) — Choose & Verify Probe (Medtronic)	เลือก Probe ยืนยันกับปุ่มด้านข้างของ Reference frame ชนิด Active → แตะปลาย Probe กับมุมด้านในของ Frame พร้อมกด foot switch เพื่อให้เครื่องมือรู้จักกัน เมื่อสำเร็จจะมีเครื่องหมายแสดง	สรุป2026-09-16-navigator-usage-maintenance
+6. Planning โดยใช้ Surface Matching	(Brain lab) ใช้ **Z-touch**	สรุป2026-09-16-navigator-usage-maintenance
+7. คลุมผ้าปลอดเชื้อ	ทาน้ำยาบริเวณแผลผ่าตัด → สวมถุงพลาสติกปิดขาจับ Reference frame ส่วนที่ไม่ sterile	สรุป2026-09-16-navigator-usage-maintenance
+8. ติดตั้ง Reference Frame Sterile	ใส่ Reference Frame ชนิด **Passive** โดยติด **Passive ball** ให้ครบทุกตำแหน่ง แล้วปูทับด้วยผ้าปลอดเชื้อ	สรุป2026-09-16-navigator-usage-maintenance
+9. ขั้นตอนการใช้งานขณะผ่าตัด	ใช้ passive ต้องทำการตรวจสอบตำแหน่งก่อนลง Incision และตรวจสอบตำแหน่งขณะผ่าตัด	สรุป2026-09-16-navigator-usage-maintenance
+เขียว	Camera สามารถเห็นเครื่องมือได้ชัดเจน	สรุป2026-09-16-navigator-usage-maintenance
+เหลือง	Camera ไม่สามารถเห็นเครื่องมือ แต่ยังสามารถทำงานได้ ต้องตรวจดูว่ามีสิ่งใดบังหรือไม่	สรุป2026-09-16-navigator-usage-maintenance
+แดง	Camera ไม่สามารถเห็นเครื่องมือ และทำงานไม่ได้ ต้องตรวจสอบตำแหน่ง Camera หรือ passive ball ว่ามีปัญหา	สรุป2026-09-16-navigator-usage-maintenance
+**CSF Management / Shunt placement**	ใช้ Electromagnetic system (**AxiEM**), **No head pin** [สไลด์][หน้า 38]	สรุป2026-09-16-navigator-usage-maintenance
+ร่วมกับแพทย์ในขั้นตอน **Set up Frame**	ช่วยจัดท่าผู้ป่วยด้วย Mayfield และดูแลการยึด Reference Active กับขาจับ Frame ให้แน่น [เสริม] (อิง [สไลด์][หน้า 24])	สรุป2026-09-16-navigator-usage-maintenance
+ปฏิบัติตามลำดับการคลุมผ้าปลอดเชื้อ	ทาน้ำยาบริเวณแผล → สวมถุงพลาสติกปิดขาจับส่วนที่ไม่ sterile → ติด Passive ball ให้ครบทุกตำแหน่งก่อนปูผ้าปลอดเชื้อทับ [สไลด์][หน้า 31-32]	สรุป2026-09-16-navigator-usage-maintenance
+**Reference Frame มี 2 ชนิด**	Active (ติดก่อนผ่าตัด กับขาจับ Mayfield) vs Passive (ติด Passive ball ใช้ตอน sterile ในสนามผ่าตัด) — ต้องแยกให้ออกว่าอันไหนใช้ตอนไหน [สไลด์][หน้า 10, 11, 24, 32]	สรุป2026-09-16-navigator-usage-maintenance
+**สัญลักษณ์สีบนจอ**	เหลืองกับแดงต่างกันตรงที่ "ยังทำงานได้หรือไม่" (เหลือง = ยังทำงานได้ / แดง = ทำงานไม่ได้) [สไลด์][หน้า 34]	สรุป2026-09-16-navigator-usage-maintenance
+เครื่อง Navigator ที่ศิริราชมี **2 ยี่ห้อ**	Brainlab และ Medtronic Stealth Station (รุ่น S7, S8) [สไลด์][หน้า 4]	สรุป2026-09-16-navigator-usage-maintenance
