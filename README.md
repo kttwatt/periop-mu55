@@ -17,6 +17,12 @@
 - 🎴 [Flashcard .md](heart-aortic/2026-09-11-heart-aortic-disease-flash.md) · [Flashcard .csv (Anki)](heart-aortic/2026-09-11-heart-aortic-disease-flash.csv)
 - 📝 **โน้ตผู้เรียน (ตรวจแก้แล้ว):** [HTML](heart-aortic/2026-09-11-heart-aortic-disease-note.html) · [.md](heart-aortic/2026-09-11-heart-aortic-disease-note.md) · [flash](heart-aortic/2026-09-11-heart-aortic-disease-note-flash.md)
 
+### 🫁 Perioperative Nursing Care in Cardiothoracic Surgery — ศ. 4 ก.ย. 2569 (พว.วิไลวรรณ)
+- 🌐 [เปิด HTML](cardiothoracic/2026-09-04-cardiothoracic.html)
+- 📄 [สรุป .md](cardiothoracic/2026-09-04-cardiothoracic.md)
+- 🧠 [Mindmap .mmd](cardiothoracic/2026-09-04-cardiothoracic.mmd)
+- 🎴 [Flashcard .md](cardiothoracic/2026-09-04-cardiothoracic-flash.md) · [Flashcard .csv (Anki)](cardiothoracic/2026-09-04-cardiothoracic-flash.csv)
+
 ### 🧠 Neurology Navigator & Endoscopic Neurosurgery — พ. 16 ก.ย. 2569 (งานการพยาบาลผ่าตัด)
 1. **Navigator: Usage and maintenance (พว.ธนัชพร ผลทวีชัย)** 13.00–14.00
    - 🌐 [เปิด HTML](neuro-navigator/2026-09-16-navigator-usage-maintenance.html)
