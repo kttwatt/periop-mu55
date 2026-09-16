@@ -3,7 +3,7 @@
 จำนวน 72 การ์ด
 
 **1.  สมการความดันโลหิต**
-    BP = Cardiac  output times SVR   Cardiac  output = Heart  rate times Stroke  volume  ดังนั้น  BP = HR times SV times SVR  — [2. กายวิภาคและสรีรวิทยาหัวใจเบื้องต้น (B]
+   BP = Cardiac output × SVR · Cardiac output = Heart rate × Stroke volume · ดังนั้น BP = HR × SV × SVR  — [2. กายวิภาคและสรีรวิทยาหัวใจเบื้องต้น (B]
 
 **2.  Preload**
    ปริมาณเลือดที่เติมหัวใจ (ดูจาก CVP, urine, pulse pressure variation).  — [2. กายวิภาคและสรีรวิทยาหัวใจเบื้องต้น (B]

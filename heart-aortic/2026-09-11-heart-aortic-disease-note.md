@@ -20,7 +20,7 @@
 -  หัวใจมี 4 ห้อง (Right Atrium -> Right Ventricle -> ปอด -> Left Atrium -> Left Ventricle -> Aorta) ทำหน้าที่เป็นปั๊ม 2 ตัว. 
 -  มี 4 ลิ้น (Tricuspid, Pulmonic, Mitral, Aortic) ทำหน้าที่เป็น "ประตูทางเดียว". 
 -  Left Ventricle (LV) มีผนังหนาที่สุด ทำหน้าที่ส่งเลือดไปเลี้ยงทั่วร่างกาย. 
--  สมการความดันโลหิต:  BP = Cardiac  output times SVR   Cardiac  output = Heart  rate times Stroke  volume  ดังนั้น  BP = HR times SV times SVR  
+-  สมการความดันโลหิต: BP = Cardiac output × SVR · Cardiac output = Heart rate × Stroke volume · ดังนั้น BP = HR × SV × SVR  
 -  ปัจจัยควบคุมความดัน: 
 -  Preload: ปริมาณเลือดที่เติมหัวใจ (ดูจาก CVP, urine, pulse pressure variation). 
 -  Contractility: แรงบีบของหัวใจ. 
