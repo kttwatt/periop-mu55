@@ -11,10 +11,11 @@
 ## 📂 สรุปตามวิชา
 
 ### ❤️ Acquired Heart Disease & Aortic Disease (OR Nurse) — ศ. 11 ก.ย. 2569 (อ.นพ.อังศุธร)
-- 🌐 [เปิด HTML](heart-aortic/2026-09-11-heart-aortic-disease.html)
+- 🌐 [เปิด HTML (สรุปสไลด์)](heart-aortic/2026-09-11-heart-aortic-disease.html)
 - 📄 [สรุป .md](heart-aortic/2026-09-11-heart-aortic-disease.md)
 - 🧠 [Mindmap .mmd](heart-aortic/2026-09-11-heart-aortic-disease.mmd)
 - 🎴 [Flashcard .md](heart-aortic/2026-09-11-heart-aortic-disease-flash.md) · [Flashcard .csv (Anki)](heart-aortic/2026-09-11-heart-aortic-disease-flash.csv)
+- 📝 **โน้ตผู้เรียน (ตรวจแก้แล้ว):** [HTML](heart-aortic/2026-09-11-heart-aortic-disease-note.html) · [.md](heart-aortic/2026-09-11-heart-aortic-disease-note.md) · [flash](heart-aortic/2026-09-11-heart-aortic-disease-note-flash.md)
 
 ### 🧠 Neurology Navigator & Endoscopic Neurosurgery — พ. 16 ก.ย. 2569 (งานการพยาบาลผ่าตัด)
 1. **Navigator: Usage and maintenance (พว.ธนัชพร ผลทวีชัย)** 13.00–14.00
