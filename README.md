@@ -23,6 +23,12 @@
 - 🧠 [Mindmap .mmd](cardiothoracic/2026-09-04-cardiothoracic.mmd)
 - 🎴 [Flashcard .md](cardiothoracic/2026-09-04-cardiothoracic-flash.md) · [Flashcard .csv (Anki)](cardiothoracic/2026-09-04-cardiothoracic-flash.csv)
 
+### 🧪 Recommended Practices for Sterilization — ศ. 18 ก.ย. 2569 (พว.กุลวรา)
+- 🌐 [เปิด HTML](sterilization/2026-09-18-sterilization.html)
+- 📄 [สรุป .md](sterilization/2026-09-18-sterilization.md)
+- 🧠 [Mindmap .mmd](sterilization/2026-09-18-sterilization.mmd)
+- 🎴 [Flashcard .md](sterilization/2026-09-18-sterilization-flash.md) · [Flashcard .csv (Anki)](sterilization/2026-09-18-sterilization-flash.csv)
+
 ### 🧠 Neurology Navigator & Endoscopic Neurosurgery — พ. 16 ก.ย. 2569 (งานการพยาบาลผ่าตัด)
 1. **Navigator: Usage and maintenance (พว.ธนัชพร ผลทวีชัย)** 13.00–14.00
    - 🌐 [เปิด HTML](neuro-navigator/2026-09-16-navigator-usage-maintenance.html)
