@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>สไลด์สอบทฤษฎีครั้งที่ 2 — 2 ต.ค. 2569 (ร่าง)</title>
+<script data-goatcounter="https://periopmu55.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>
+  :root {
+    --primary: #0f766e;
+    --primary-800: #115e59;
+    --ink-900: #134e4a;
+    --secondary-400: #64748b;
+    --teal-50: #f0fdfa;
+    --teal-100: #ccfbf1;
+    --teal-200: #99f6e4;
+    --surface: #ffffff;
+    --neutral-100: #e5e7eb;
+    --on-primary: #ffffff;
+    --amber-bg: #fef3c7;
+    --amber-ink: #92400e;
+    --amber-border: #fde68a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Noto Sans Thai", "Sarabun", system-ui, sans-serif;
+    background: var(--teal-50);
+    color: var(--ink-900);
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 14px 40px;
+  }
+  header {
+    background: var(--teal-50);
+    border-bottom: 1px solid var(--teal-200);
+    padding: 4px 2px 16px;
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: var(--ink-900);
+    margin: 0 0 8px;
+  }
+  .sub {
+    color: var(--secondary-400);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .totals { display: flex; gap: 8px; flex-wrap: wrap; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--teal-100); color: var(--primary);
+    font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 999px;
+  }
+  .pill.warn { background: var(--amber-bg); color: var(--amber-ink); }
+  ol.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .row {
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    background: var(--surface); border: 1px solid var(--neutral-100);
+    border-radius: 14px; padding: 12px 14px;
+    transition: background-color .15s ease, border-color .15s ease;
+  }
+  .row:hover { background: var(--teal-100); border-color: var(--teal-200); }
+  .row-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .num {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 999px;
+    background: var(--teal-100); color: var(--primary);
+    font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+  .title-block { min-width: 0; }
+  .subject { font-size: 14px; font-weight: 700; color: var(--ink-900); line-height: 1.35; overflow-wrap: break-word; }
+  .lecturer { font-size: 12px; color: var(--secondary-400); margin-top: 2px; }
+  .qrange {
+    display: inline-block; background: var(--teal-100); color: var(--primary);
+    font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px;
+    margin-left: 6px; vertical-align: 1px;
+  }
+  .row-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+  .qcount {
+    background: var(--teal-100); color: var(--primary);
+    font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--primary); color: var(--on-primary);
+    font-size: 12.5px; font-weight: 700; text-decoration: none; padding: 8px 12px;
+    border-radius: 10px; white-space: nowrap;
+  }
+  .btn:hover, .btn:focus-visible { background: var(--primary-800); }
+  .row.missing { border-style: dashed; border-color: var(--teal-200); background: var(--teal-50); }
+  .row.postponed { border-style: dashed; border-color: var(--amber-border); background: var(--amber-bg); }
+  .badge-missing, .badge-postpone {
+    font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  .badge-missing { background: var(--amber-bg); color: var(--amber-ink); }
+  .badge-postpone { background: #fff; color: var(--amber-ink); border: 1px solid var(--amber-border); }
+  .footnote {
+    margin-top: 18px; background: var(--amber-bg); color: var(--amber-ink);
+    font-size: 13px; line-height: 1.5; padding: 12px 14px;
+    border-radius: 10px; border: 1px solid var(--amber-border);
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>📚 สไลด์สอบทฤษฎีครั้งที่ 2 (2 ต.ค. 2569) · ร่าง</h1>
+  <div class="sub">ครอบคลุมวิชาสอน 23 ก.ย.–1 ต.ค. + Thoracic System (เลื่อนจากครั้งที่ 1) · ยังรอ blueprint กำหนดช่วงข้อ</div>
+  <div class="totals">
+    <span class="pill">22 วิชา</span>
+    <span class="pill warn">⏭ 1 วิชาเลื่อน</span>
+    <span class="pill warn">⚠️ รอสไลด์หลายวิชา</span>
+  </div>
+</header>
+
+<ol class="list">
+  <li class="row">
+    <span class="row-left"><span class="num">1</span><span class="title-block"><span class="subject">Thoracic System</span><br><span class="lecturer">ผศ.นพ.ปุณณฤกษ์<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">เลื่อน</span><span class="badge-postpone">เลื่อนมารอบนี้</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">2</span><span class="title-block"><span class="subject">Surgery in Neurology</span><br><span class="lecturer">ศ.นพ.บรรพต<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">3</span><span class="title-block"><span class="subject">Neurology Anatomy &amp; Surgery</span><br><span class="lecturer">ผศ.นพ.ปฤณัต<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">4</span><span class="title-block"><span class="subject">ERAS</span><br><span class="lecturer">รศ.พญ.มิ่งขวัญ<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">5</span><span class="title-block"><span class="subject">OBGYN Anatomy &amp; Surgery</span><br><span class="lecturer">ผศ.นพ.พิสุทธิ์<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">6</span><span class="title-block"><span class="subject">Periop OBGYN</span><br><span class="lecturer">พว.ฐิติยา<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">7</span><span class="title-block"><span class="subject">Periop GYN: Robotic</span><br><span class="lecturer">พว.สุชาดา<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">8</span><span class="title-block"><span class="subject">Robotic Surgery in GYN</span><br><span class="lecturer">ผศ.นพ.บุญเลิศ<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">9</span><span class="title-block"><span class="subject">Periop Ophthalmic Surgery</span><br><span class="lecturer">พว.อัจฉราวดี<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">10</span><span class="title-block"><span class="subject">MEWS / Pressure Injury in OR</span><br><span class="lecturer">พว.นพเก<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">11</span><span class="title-block"><span class="subject">Periop Vascular Surgery</span><br><span class="lecturer">พว.ศันศนีย์<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">12</span><span class="title-block"><span class="subject">Craniomaxillofacial &amp; Surgery</span><br><span class="lecturer">ศ.คลินิกเกียรติคุณ นพ.อภิรักษ์<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">13</span><span class="title-block"><span class="subject">Urogynecological Procedures</span><br><span class="lecturer">ผศ.พญ.พัทยา<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">14</span><span class="title-block"><span class="subject">Postop Nursing: Recovery</span><br><span class="lecturer">พว.สรรสณีย์<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">15</span><span class="title-block"><span class="subject">การพยาบาลผู้ป่วยพิเศษ (เด็ก/ผู้สูงอายุ)</span><br><span class="lecturer">พว.สรรสณีย์<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">16</span><span class="title-block"><span class="subject">Spine Anatomy &amp; Surgery</span><br><span class="lecturer">ผศ.นพ.เอกพจน์<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">17</span><span class="title-block"><span class="subject">Breast Anatomy &amp; Physiology</span><br><span class="lecturer">อ.ดร.นพ.ธนากร<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">18</span><span class="title-block"><span class="subject">Periop Breast Surgery</span><br><span class="lecturer">พว.ธันยชนก<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">19</span><span class="title-block"><span class="subject">Periop Plastic: Palatoplasty</span><br><span class="lecturer">พว.อุชุตา<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">20</span><span class="title-block"><span class="subject">Periop GI: Vascular Sealing</span><br><span class="lecturer">พว.พจนีย์<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">21</span><span class="title-block"><span class="subject">Infection Control in OR</span><br><span class="lecturer">พว.ศิริพร<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">22</span><span class="title-block"><span class="subject">Organ Transplantation</span><br><span class="lecturer">ผศ.นพ.ประวัฒน์<span class="qrange">ข้อ ?–?</span></span></span></span>
+    <span class="row-right"><span class="qcount">?</span><span class="badge-missing">รอสไลด์</span></span>
+  </li>
+</ol>
+
+<div class="footnote"><b>คำอธิบาย (ร่าง — ยังไม่เผยแพร่)</b>
+• ยังไม่มี blueprint สอบครั้งที่ 2 → ช่วงข้อ (a–b) / จำนวนข้อทุกวิชาเป็น "?" รอเติม
+• วิชาส่วนใหญ่ยังไม่ถึงวันสอน → ตำแหน่งสไลด์และปุ่ม "เปิดสไลด์" ยังเป็น placeholder
+• Men's Health ถูกตัดออกจากรายการตามที่ขอ</div>
+</body>
+</html>
