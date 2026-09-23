@@ -29,6 +29,12 @@
 - 🧠 [Mindmap .mmd](sterilization/2026-09-18-sterilization.mmd)
 - 🎴 [Flashcard .md](sterilization/2026-09-18-sterilization-flash.md) · [Flashcard .csv (Anki)](sterilization/2026-09-18-sterilization-flash.csv)
 
+### ⚡ ERAS: Concepts & How to Implement — อ. 23 ก.ย. 2569 (รศ.พญ.มิ่งขวัญ)
+- 🌐 [เปิด HTML](eras/2026-09-23-eras-periop.html)
+- 📄 [สรุป .md](eras/2026-09-23-eras-periop.md)
+- 🧠 [Mindmap .mmd](eras/2026-09-23-eras-periop.mmd)
+- 🎴 [Flashcard .md](eras/2026-09-23-eras-periop-flash.md) · [Flashcard .csv (Anki)](eras/2026-09-23-eras-periop-flash.csv)
+
 ### 🧠 Neurology Navigator & Endoscopic Neurosurgery — พ. 16 ก.ย. 2569 (งานการพยาบาลผ่าตัด)
 1. **Navigator: Usage and maintenance (พว.ธนัชพร ผลทวีชัย)** 13.00–14.00
    - 🌐 [เปิด HTML](neuro-navigator/2026-09-16-navigator-usage-maintenance.html)
