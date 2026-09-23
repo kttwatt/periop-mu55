@@ -1,0 +1,69 @@
+Blood work	CBC, BUN, Cr, electrolytes	สรุป2026-09-07-anesthesia-perioperative-combined
+สารน้ำที่ไม่มีกาก (clear liquid)	2 ชม.	สรุป2026-09-07-anesthesia-perioperative-combined
+นมแม่	4 ชม.	สรุป2026-09-07-anesthesia-perioperative-combined
+นมวัวและนมอื่นๆ	6 ชม.	สรุป2026-09-07-anesthesia-perioperative-combined
+อาหารเบาๆ	6 ชม.	สรุป2026-09-07-anesthesia-perioperative-combined
+อาหารหนัก ไขมันสัตว์	8 ชม.	สรุป2026-09-07-anesthesia-perioperative-combined
+การตอบสนองต่อสิ่งกระตุ้น	ปกติ	สรุป2026-09-07-anesthesia-perioperative-combined
+ทางหายใจ	ปกติ	สรุป2026-09-07-anesthesia-perioperative-combined
+การหายใจเอง	ปกติ	สรุป2026-09-07-anesthesia-perioperative-combined
+ระบบไหลเวียนเลือด	ปกติ	สรุป2026-09-07-anesthesia-perioperative-combined
++4	Combative	สรุป2026-09-07-anesthesia-perioperative-combined
++3	Very agitated	สรุป2026-09-07-anesthesia-perioperative-combined
++2	Agitated	สรุป2026-09-07-anesthesia-perioperative-combined
++1	Restless	สรุป2026-09-07-anesthesia-perioperative-combined
+0	Alert and Calm	สรุป2026-09-07-anesthesia-perioperative-combined
+-1	Drowsy	สรุป2026-09-07-anesthesia-perioperative-combined
+-2	Light sedation	สรุป2026-09-07-anesthesia-perioperative-combined
+-3	Moderate sedation	สรุป2026-09-07-anesthesia-perioperative-combined
+-4	Deep sedation	สรุป2026-09-07-anesthesia-perioperative-combined
+-5	Unarousable	สรุป2026-09-07-anesthesia-perioperative-combined
+บันทึกการหายใจ, ระดับออกซิเจน, การไหลเวียนเลือด, ยา, สารน้ำ ในช่วงเวลาสำคัญ	ก่อนเริ่มหัตถการ, หลังให้ยา sedation/analgesia, เมื่อเสร็จหัตถการ, ระหว่างฟื้นตัวระยะแรก, เมื่อผู้ป่วยได้รับการจำหน่าย	สรุป2026-09-07-anesthesia-perioperative-combined
+[คาบ] จุดนี้อาจารย์ยืนยันว่าออกข้อสอบ (แม้จะพูดติดตลกว่า "ออกข้อสอบขำมาก") — ข้อควรระวังเมื่อถูกเรียกให้ไปช่วยกดคอ ต้องแยกให้ออกระหว่าง		สรุป2026-09-07-anesthesia-perioperative-combined
+การเคลื่อนไหว	2 = ขยับได้ดีทั้งแขนและขา / 1 = ขยับแขนหรือขาได้ / 0 = ไม่ขยับทั้งแขนและขา	สรุป2026-09-07-anesthesia-perioperative-combined
+การหายใจ	2 = หายใจและไอได้ดี / 1 = เหนื่อย หายใจตื้น / 0 = ไม่หายใจ	สรุป2026-09-07-anesthesia-perioperative-combined
+การไหลเวียนเลือด	2 = ความดันเลือดแตกต่างจากค่าเดิมไม่เกิน 20 มม.ปรอท / 1 = แตกต่าง 20-50 มม.ปรอท / 0 = แตกต่างมากกว่า 50 มม.ปรอท	สรุป2026-09-07-anesthesia-perioperative-combined
+ความรู้สึกตัว	2 = ตื่นดี / 1 = ปลุกตื่นได้ง่าย / 0 = ปลุกไม่ตื่น ไม่ตอบสนอง	สรุป2026-09-07-anesthesia-perioperative-combined
+ความอิ่มตัวของออกซิเจนในเลือด	2 = มากกว่า 92% เมื่อหายใจอากาศปกติ (FiO2 = 0.21) / 1 = มากกว่า 90% เมื่อใช้ O2 เข้มข้นสูง / 0 = น้อยกว่า 90% แม้ใช้ O2 เข้มข้นสูง	สรุป2026-09-07-anesthesia-perioperative-combined
+สัญญาณชีพ	2 = แตกต่างจากค่าเดิมไม่เกิน 20% / 1 = แตกต่าง 20-40% / 0 = แตกต่างมากกว่า 40%	สรุป2026-09-07-anesthesia-perioperative-combined
+การเคลื่อนไหว	2 = เดินได้ปกติ ไม่เวียนศีรษะ / 1 = เดินได้โดยมีคนช่วย / 0 = ลุกเดินไม่ได้	สรุป2026-09-07-anesthesia-perioperative-combined
+คลื่นไส้อาเจียน	2 = เล็กน้อย รักษาได้ด้วยยากิน / 1 = ปานกลาง รักษาได้ด้วยยาฉีด / 0 = รุนแรง ยังมีอาการแม้ได้ยาฉีดซ้ำ	สรุป2026-09-07-anesthesia-perioperative-combined
+ความปวด	2 = เล็กน้อย ควบคุมได้ด้วยยากินแก้ปวด / 1 = ปวดมาก ไม่สามารถควบคุมได้ด้วยยากินแก้ปวด	สรุป2026-09-07-anesthesia-perioperative-combined
+ปริมาณเลือดออกจากแผลผ่าตัด	2 = เล็กน้อย ไม่ต้องเปลี่ยนผ้าปิดแผล / 1 = ปานกลาง ต้องเปลี่ยนผ้าปิดแผลไม่เกิน 2 ครั้ง / 0 = มาก ต้องเปลี่ยนผ้าปิดแผลมากกว่า 3 ครั้ง	สรุป2026-09-07-anesthesia-perioperative-combined
+Chloral hydrate	30-100 mg/kg	สรุป2026-09-07-anesthesia-perioperative-combined
+Midazolam (Dormicum®)	0.05-0.1 mg/kg IV	สรุป2026-09-07-anesthesia-perioperative-combined
+Diazepam (Valium®)	2-10 mg	สรุป2026-09-07-anesthesia-perioperative-combined
+Dexmedetomidine (Precedex®)	Load 1 mcg/kg -10 min, gtt 0.2-0.7 mcg/kg/hr	สรุป2026-09-07-anesthesia-perioperative-combined
+Ketamine	IM 5-10 mg/kg, IV 0.5-1 mg/kg	สรุป2026-09-07-anesthesia-perioperative-combined
+Fentanyl	ผู้ใหญ่ทีละ 25-50 mcg	สรุป2026-09-07-anesthesia-perioperative-combined
+Pethidine	0.5-2 mg/kg IV / 25-100 mg/kg IM	สรุป2026-09-07-anesthesia-perioperative-combined
+Morphine	0.05-0.1 mg/kg IV	สรุป2026-09-07-anesthesia-perioperative-combined
+Tramadol (Tramal®)	50 mg IV prn	สรุป2026-09-07-anesthesia-perioperative-combined
+Ketorolac (Ketolac®)	0.5-1 mg/kg IV q 6 hr	สรุป2026-09-07-anesthesia-perioperative-combined
+Diclofenac (Voltaren®)	0.5-1.5 mg/kg IV q 12 hr	สรุป2026-09-07-anesthesia-perioperative-combined
+Parecoxib (Dynastat®)	40 mg IV q 12-24 hr	สรุป2026-09-07-anesthesia-perioperative-combined
+Dimenhydrinate (Dramamine®)	50-100 mg PO/IV/IM	สรุป2026-09-07-anesthesia-perioperative-combined
+Ondansetron (Onsia®)	เด็ก <30kg 1 mg IV, >30kg 1-4 mg IV	สรุป2026-09-07-anesthesia-perioperative-combined
+Metoclopramide (Plasil®)	0.1-0.2 mg/kg, max 10 mg	สรุป2026-09-07-anesthesia-perioperative-combined
+Naloxone (Narcan®)	0.5-1 mcg/kg q 3-5 min	สรุป2026-09-07-anesthesia-perioperative-combined
+Flumazenil (Anexate®)	ผู้ใหญ่ครั้งละ 0.1 mg	สรุป2026-09-07-anesthesia-perioperative-combined
+"ไตลอยคิ"	Thyroid cartilage (กระดูกอ่อนต่อมไทรอยด์/"ลูกกระเดือก")	สรุป2026-09-07-anesthesia-perioperative-combined
+"ไครคอยด์" / "ไคคอยด์" / "ใครคอย"	Cricoid (cartilage/pressure)	สรุป2026-09-07-anesthesia-perioperative-combined
+"เซ็นหรือแมนูเวอร์" / "ซีลิก" / "Selig"	Sellick's maneuver	สรุป2026-09-07-anesthesia-perioperative-combined
+"lap sed"	Rapid sequence induction (RSI)	สรุป2026-09-07-anesthesia-perioperative-combined
+"running gel Mask Airway"	Laryngeal Mask Airway (LMA)	สรุป2026-09-07-anesthesia-perioperative-combined
+"โซดารา" / "โซดาราย" / "โซดาไลม"	Soda lime	สรุป2026-09-07-anesthesia-perioperative-combined
+"สกาเบนจิ้ง" / "สกายเบนจิ้ง"	Scavenging system	สรุป2026-09-07-anesthesia-perioperative-combined
+"อีทอไม่เดร" / "อีทอมิเดร"	Etomidate	สรุป2026-09-07-anesthesia-perioperative-combined
+"เพชเรด"	Platelet (เกล็ดเลือด)	สรุป2026-09-07-anesthesia-perioperative-combined
+"เพดดี"	Pethidine	สรุป2026-09-07-anesthesia-perioperative-combined
+"อซซอ"	Zofran (ondansetron ชื่อการค้า)	สรุป2026-09-07-anesthesia-perioperative-combined
+"เมโทโปรมา"	Metoclopramide (Plasil®)	สรุป2026-09-07-anesthesia-perioperative-combined
+"ล็อกโซน" / "namk"	Naloxone (Narcan®)	สรุป2026-09-07-anesthesia-perioperative-combined
+"ฟูมาซี"	Flumazenil (Anexate®)	สรุป2026-09-07-anesthesia-perioperative-combined
+"Op oil over doo"	Opioid overdose	สรุป2026-09-07-anesthesia-perioperative-combined
+"โคมโทส" / "coma toes"	Comatose	สรุป2026-09-07-anesthesia-perioperative-combined
+"แซท"	Sat (SpO2 / oxygen saturation)	สรุป2026-09-07-anesthesia-perioperative-combined
+"แม็ก"	MAC (Monitored Anesthesia Care)	สรุป2026-09-07-anesthesia-perioperative-combined
+"ดีบ"	Deep (เช่น "deep sedation")	สรุป2026-09-07-anesthesia-perioperative-combined
+"ไลฟ์"	Light (เช่น "light sedation" หรือผู้ป่วยเริ่มรู้สึกตัว/"เบา")	สรุป2026-09-07-anesthesia-perioperative-combined
