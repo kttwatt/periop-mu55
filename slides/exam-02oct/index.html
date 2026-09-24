@@ -11,6 +11,11 @@
     --teal-50:#f0fdfa; --teal-100:#ccfbf1; --teal-200:#99f6e4; --surface:#ffffff;
     --neutral-100:#e5e7eb; --on-primary:#ffffff; --amber-bg:#fef3c7; --amber-ink:#92400e; --amber-border:#fde68a;
   }
+  html[data-theme="dark"] {
+    --primary:#2dd4bf; --primary-800:#5eead4; --ink-900:#e6edf5; --secondary-400:#8ba3c3;
+    --teal-50:#0f1419; --teal-100:#16212b; --teal-200:#244055; --surface:#1a2230;
+    --neutral-100:#283342; --amber-bg:#3a2a12; --amber-ink:#fbcf8d; --amber-border:#5a441f;
+  }
   * { box-sizing:border-box; }
   body { font-family:"Noto Sans Thai","Sarabun",system-ui,sans-serif; background:var(--teal-50); color:var(--ink-900); max-width:800px; margin:0 auto; padding:20px 14px 40px; }
   header { background:var(--teal-50); border-bottom:1px solid var(--teal-200); padding:4px 2px 16px; margin-bottom:16px; }
@@ -36,12 +41,16 @@
   .chip.ok { background:var(--teal-100); color:var(--primary); }
   a.chip.ok:hover { background:var(--teal-200); }
   .chip.no { background:#f1f5f9; color:#94a3b8; }
+  html[data-theme="dark"] .chip.no { background:#11161f; color:#5a6a80; }
   .chip.sum { background:#e0f2fe; color:#0369a1; }
+  html[data-theme="dark"] .chip.sum { background:#0b2436; color:#7dd3fc; }
   .home-tab{display:inline-block;margin:14px 0 0 14px;background:#1c2638;color:#4aa3ff;border:1px solid #2a3448;border-radius:8px;padding:6px 12px;font-size:.75rem;font-weight:600;text-decoration:none}.home-tab:hover{border-color:#4aa3ff}
+  .dark-toggle{position:fixed;top:12px;right:14px;z-index:60;background:var(--surface);color:var(--ink-900);border:1px solid var(--neutral-100);border-radius:8px;padding:6px 12px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:inherit}
   .footnote { margin-top:18px; background:var(--amber-bg); color:var(--amber-ink); font-size:13px; line-height:1.55; padding:12px 14px; border-radius:10px; border:1px solid var(--amber-border); }
 </style>
 </head>
 <body>
+<button class="dark-toggle" id="darkToggle" type="button">🌙</button>
 <a class="home-tab" href="../../index.html">← หน้าแรก</a>
 <header>
   <h1>📚 สไลด์สอบทฤษฎีครั้งที่ 2 (2 ต.ค. 2569)</h1>
@@ -211,5 +220,23 @@
 • Notes = มีสรุปเนื้อหา (แตะเปิดได้) · Slides = มีไฟล์สไลด์
 • 25 ก.ย.–1 ต.ค. ยังไม่ถึงวันสอน → ยังว่างทั้ง 2 ช่อง
 • ยังรอ blueprint เต็มกำหนดช่วงข้อ (a–b)</div>
+<script>
+(function(){
+  var btn = document.getElementById('darkToggle');
+  var root = document.documentElement;
+  function setTheme(theme){
+    root.setAttribute('data-theme', theme);
+    btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+    try { localStorage.setItem('exam2oct-theme', theme); } catch(e){}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('exam2oct-theme'); } catch(e){}
+  setTheme(saved || 'light');
+  btn.addEventListener('click', function(){
+    var cur = root.getAttribute('data-theme') || 'light';
+    setTheme(cur === 'dark' ? 'light' : 'dark');
+  });
+})();
+</script>
 </body>
 </html>
