@@ -22,7 +22,8 @@ h3{color:#7fd1ff;font-size:.95rem}table{border-collapse:collapse;width:100%;font
 .btns button{background:#182028;color:#7fd1ff;border:1px solid #2a3b4d;border-radius:6px;padding:4px 10px;font-size:.9rem;cursor:pointer}
 .btns button:hover{border-color:#7fd1ff}
 @media(max-width:860px){.layout{grid-template-columns:1fr;height:auto}.pane-mindmap{height:62vh}}
-.home-tab{display:inline-block;margin:14px 0 0 14px;background:#1c2638;color:#4aa3ff;border:1px solid #2a3448;border-radius:8px;padding:6px 12px;font-size:.75rem;font-weight:600;text-decoration:none}.home-tab:hover{border-color:#4aa3ff}</style></head><body><a class="home-tab" href="../slides/exam-02oct/index.html">← หน้าแรก</a>
+.home-tab{display:inline-block;margin:14px 0 0 14px;background:#1c2638;color:#4aa3ff;border:1px solid #2a3448;border-radius:8px;padding:6px 12px;font-size:.75rem;font-weight:600;text-decoration:none}.home-tab:hover{border-color:#4aa3ff}html[data-theme="light"]{--c-bg:#f7fafc;--c-ink:#1a2634;--c-mut:#64748b;--c-card:#ffffff;--c-line:#dbe4ee;--c-hd:#eef4f9;--c-lk:#0f766e;--c-grn:#15803d;--c-block:#eef6f6}html[data-theme="light"] html,html[data-theme="light"] body{background:#f7fafc;color:#1a2634}html[data-theme="light"] header{background:linear-gradient(180deg,#eef4f9,#f7fafc);border-color:#dbe4ee}html[data-theme="light"] header h1 .sub,html[data-theme="light"] .pane-mindmap .tip{color:#64748b}html[data-theme="light"] .links a{color:#0f766e;border-color:#cbd7e3;background:#eef4f9}html[data-theme="light"] .pane-mindmap{border-color:#dbe4ee}html[data-theme="light"] section{background:#ffffff;border-color:#dbe4ee}html[data-theme="light"] h2{color:#15803d;border-color:#15803d}html[data-theme="light"] h3,html[data-theme="light"] a,html[data-theme="light"] .sub{color:#0f766e}html[data-theme="light"] th,html[data-theme="light"] td{border-color:#dbe4ee}html[data-theme="light"] th{background:#eef6f6;color:#0f766e}html[data-theme="light"] .t,html[data-theme="light"] .tag{color:#15803d}html[data-theme="light"] .sub-body{color:#4b5c70}html[data-theme="light"] blockquote{color:#334155;border-color:#0f766e;background:#eef6f6}html[data-theme="light"] .btns button{background:#eef4f9;color:#0f766e;border-color:#cbd7e3}html[data-theme="light"] .markmap-node>circle{fill:#ffffff}html[data-theme="light"] .markmap-node text{fill:#1a2634}html[data-theme="light"] .home-tab{background:#ffffff;color:#0f766e;border-color:#cbd7e3}html .dark-toggle{position:fixed;top:12px;right:14px;z-index:60;background:var(--c-bg,#182028);color:var(--c-ink,#7fd1ff);border:1px solid var(--c-line,#2a3b4d);border-radius:8px;padding:6px 12px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:inherit}</style></head><body>
+<button class="dark-toggle" id="darkToggle" type="button">🌙</button><a class="home-tab" href="../slides/exam-02oct/index.html">← หน้าแรก</a>
 <header><h1>Cost Analysis in OR (หน่วย 1, ศ. 28 ส.ค. 2569)<span class="sub">สรุปละเอียด + Interactive Mindmap</span></h1>
 <div class="links"><a href="../index.html">🗂️ หน้าแรก (Notes/Schedule)</a><a href="https://github.com/kttwatt/periop-mu55" target="_blank" rel="noopener">📁 Repo</a></div></header>
 <div class="layout">
@@ -59,5 +60,12 @@ document.addEventListener("DOMContentLoaded",()=>{
   setTimeout(bind,300);
 });
 function zi(dir){ var k=dir>0?1.35:0.75; if(mm) d3.select('#mindmap').transition().duration(160).call(mm.zoom.scaleBy, k); }
+</script>
+
+<script>
+(function(){var b=document.getElementById('darkToggle'),r=document.documentElement;
+function set(t){r.setAttribute('data-theme',t);b.textContent=t==='dark'?'☀️':'🌙';try{localStorage.setItem('note-theme',t);}catch(e){}}
+var s=null;try{s=localStorage.getItem('note-theme');}catch(e){}set(s||'light');
+b.addEventListener('click',function(){var c=r.getAttribute('data-theme')||'light';set(c==='dark'?'light':'dark');});})();
 </script>
 </body></html>
