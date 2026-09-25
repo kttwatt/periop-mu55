@@ -11,11 +11,6 @@
     --teal-50:#f0fdfa; --teal-100:#ccfbf1; --teal-200:#99f6e4; --surface:#ffffff;
     --neutral-100:#e5e7eb; --on-primary:#ffffff; --amber-bg:#fef3c7; --amber-ink:#92400e; --amber-border:#fde68a;
   }
-  html[data-theme="dark"] {
-    --primary:#2dd4bf; --primary-800:#5eead4; --ink-900:#e6edf5; --secondary-400:#8ba3c3;
-    --teal-50:#0f1419; --teal-100:#16212b; --teal-200:#244055; --surface:#1a2230;
-    --neutral-100:#283342; --amber-bg:#3a2a12; --amber-ink:#fbcf8d; --amber-border:#5a441f;
-  }
   * { box-sizing:border-box; }
   body { font-family:"Noto Sans Thai","Sarabun",system-ui,sans-serif; background:var(--teal-50); color:var(--ink-900); max-width:800px; margin:0 auto; padding:20px 14px 40px; }
   header { background:var(--teal-50); border-bottom:1px solid var(--teal-200); padding:4px 2px 16px; margin-bottom:16px; }
@@ -24,41 +19,41 @@
   .totals { display:flex; gap:8px; flex-wrap:wrap; }
   .pill { display:inline-flex; align-items:center; gap:6px; background:var(--teal-100); color:var(--primary); font-size:12px; font-weight:700; padding:6px 12px; border-radius:999px; }
   .pill.warn { background:var(--amber-bg); color:var(--amber-ink); }
-  .day-header { font-size:12px; font-weight:800; color:var(--secondary-400); margin:14px 2px 6px; }
-  .future-tag { font-weight:600; color:#c2410c; font-size:11px; margin-left:4px; }
-  ol.list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
-  .row { display:flex; justify-content:space-between; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--neutral-100); border-radius:14px; padding:12px 14px; }
+  ol.list { list-style:none; margin:0 0 14px; padding:0; display:flex; flex-direction:column; gap:8px; }
+  .row { display:flex; justify-content:space-between; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--neutral-100); border-radius:14px; padding:12px 14px; transition:background-color .15s ease, border-color .15s ease; }
   .row:hover { background:var(--teal-100); border-color:var(--teal-200); }
-  .row-postponed { background:var(--amber-bg); border:1px dashed var(--amber-border); }
-  .row-partial { border:1px dashed var(--teal-200); background:var(--teal-50); }
   .row-left { display:flex; align-items:center; gap:10px; min-width:0; }
   .num { flex-shrink:0; width:26px; height:26px; border-radius:999px; background:var(--teal-100); color:var(--primary); font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
   .title-block { min-width:0; }
   .subject { font-size:14px; font-weight:700; line-height:1.35; overflow-wrap:break-word; }
   .lecturer { font-size:12px; color:var(--secondary-400); margin-top:2px; }
-  .row-right { display:flex; align-items:center; gap:6px; flex-shrink:0; }
-  .chip { display:inline-flex; align-items:center; gap:4px; font-size:11.5px; font-weight:700; padding:5px 9px; border-radius:999px; white-space:nowrap; text-decoration:none; }
-  .chip.ok { background:var(--teal-100); color:var(--primary); }
-  a.chip.ok:hover { background:var(--teal-200); }
-  .chip.no { background:#f1f5f9; color:#94a3b8; }
-  html[data-theme="dark"] .chip.no { background:#11161f; color:#5a6a80; }
-  .chip.sum { background:#e0f2fe; color:#0369a1; }
-  html[data-theme="dark"] .chip.sum { background:#0b2436; color:#7dd3fc; }
-  
-  .dark-toggle{position:fixed;top:12px;right:14px;z-index:60;background:var(--surface);color:var(--ink-900);border:1px solid var(--neutral-100);border-radius:8px;padding:6px 12px;font-size:.75rem;font-weight:600;cursor:pointer;font-family:inherit}
-  .footnote { margin-top:18px; background:var(--amber-bg); color:var(--amber-ink); font-size:13px; line-height:1.55; padding:12px 14px; border-radius:10px; border:1px solid var(--amber-border); }
+  .row-right { display:flex; align-items:center; gap:8px; flex-shrink:0; flex-wrap:wrap; justify-content:flex-end; }
+  .btn { display:inline-flex; align-items:center; gap:4px; background:var(--primary); color:var(--on-primary); font-size:12.5px; font-weight:700; text-decoration:none; padding:8px 12px; border-radius:10px; white-space:nowrap; }
+  .btn:hover, .btn:focus-visible { background:var(--primary-800); }
+  .btn.sum { background:#e0f2fe; color:#0369a1; }
+  .btn.sum:hover { background:#bae6fd; }
+  .row.missing { border-style:dashed; border-color:var(--teal-200); background:var(--teal-50); }
+  .row.postponed { border-style:dashed; border-color:var(--amber-border); background:var(--amber-bg); }
+  .badge-missing, .badge-postpone {
+    font-size:11.5px; font-weight:700; padding:4px 10px; border-radius:999px; white-space:nowrap;
+  }
+  .badge-missing { background:var(--amber-bg); color:var(--amber-ink); }
+  .badge-postpone { background:#fff; color:var(--amber-ink); border:1px solid var(--amber-border); }
+  .day-header { font-size:12px; font-weight:800; color:var(--secondary-400); margin:14px 2px 6px; }
+  .future-tag { font-weight:600; color:#c2410c; font-size:11px; margin-left:4px; }
+  .footnote { margin-top:18px; background:var(--amber-bg); color:var(--amber-ink); font-size:13px; line-height:1.5; padding:12px 14px; border-radius:10px; border:1px solid var(--amber-border); }
 </style>
 </head>
 <body>
-<button class="dark-toggle" id="darkToggle" type="button">🌙</button>
 
 <header>
   <h1>📚 สไลด์สอบทฤษฎีครั้งที่ 2 (2 ต.ค. 2569)</h1>
-  <div class="sub"></div>
+  <div class="sub">ตาม blueprint 106 ข้อ · ครั้งที่ 2 = วิชาที่เรียนหลังสอบครั้งที่ 1 + Thoracic System (ข้อ 73–86 เลื่อนมา)</div>
   <div class="totals">
     <span class="pill">40 วิชา</span>
-    <span class="pill">Slides 17</span>
-    <span class="pill">Notes 11</span>
+    <span class="pill">Slides 19</span>
+    <span class="pill warn">⏭ 1 วิชาเลื่อน</span>
+    <span class="pill warn">⚠️ 20 วิชายังไม่มีสไลด์</span>
   </div>
 </header>
 
@@ -66,11 +61,11 @@
 <ol class="list">
   <li class="row">
     <span class="row-left"><span class="num">1</span><span class="title-block"><span class="subject">Cost Analysis in OR</span><br><span class="lecturer">พว.กุลวรา</span></span></span>
-    <span class="row-right"><a class="chip ok" href="00a-cost-analysis.pdf">Slides ›</a><a class="chip sum" href="../../cost/2026-08-28-unit1-cost-analysis.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../cost/2026-08-28-unit1-cost-analysis.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="00a-cost-analysis.pdf" href="00a-cost-analysis.pdf">เปิดสไลด์ ›</a></span>
   </li>
-  <li class="row row-partial">
+  <li class="row">
     <span class="row-left"><span class="num">2</span><span class="title-block"><span class="subject">Risk Management in OR</span><br><span class="lecturer">พว.น้องนุช</span></span></span>
-    <span class="row-right"><a class="chip ok" href="00d-risk-management.pdf">Slides ›</a><a class="chip sum" href="../../risk-management/2026-08-28-risk-management.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../risk-management/2026-08-28-risk-management.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="00d-risk-management.pdf" href="00d-risk-management.pdf">เปิดสไลด์ ›</a></span>
   </li>
 </ol>
 
@@ -78,11 +73,11 @@
 <ol class="list">
   <li class="row">
     <span class="row-left"><span class="num">3</span><span class="title-block"><span class="subject">Organ Transplant: Donor/Recipient</span><br><span class="lecturer">พว.กมลทิพย์</span></span></span>
-    <span class="row-right"><a class="chip ok" href="00-organ-transplant.pdf">Slides ›</a><a class="chip sum" href="../../organ-transplantation/2026-09-03-organ-transplantation.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../organ-transplantation/2026-09-03-organ-transplantation.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="00-organ-transplant.pdf" href="00-organ-transplant.pdf">เปิดสไลด์ ›</a></span>
   </li>
-  <li class="row row-partial">
+  <li class="row">
     <span class="row-left"><span class="num">4</span><span class="title-block"><span class="subject">Nurse Coordinator</span><br><span class="lecturer">พว.พีรา</span></span></span>
-    <span class="row-right"><a class="chip ok" href="00b-nurse-coordinator.pdf">Slides ›</a><a class="chip sum" href="../../nurse-coordinator/2026-09-03-nurse-coordinator.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../nurse-coordinator/2026-09-03-nurse-coordinator.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="00b-nurse-coordinator.pdf" href="00b-nurse-coordinator.pdf">เปิดสไลด์ ›</a></span>
   </li>
 </ol>
 
@@ -90,11 +85,11 @@
 <ol class="list">
   <li class="row">
     <span class="row-left"><span class="num">5</span><span class="title-block"><span class="subject">Anesthesia &amp; Perioperative Surgery</span><br><span class="lecturer">รศ.นพ.ประเสริฐ</span></span></span>
-    <span class="row-right"><a class="chip ok" href="00c-anesthesia.pdf">Slides ›</a><a class="chip sum" href="../../anesthesia/2026-09-07-anesthesia-perioperative.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../anesthesia/2026-09-07-anesthesia-perioperative.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="00c-anesthesia.pdf" href="00c-anesthesia.pdf">เปิดสไลด์ ›</a></span>
   </li>
-  <li class="row row-partial">
+  <li class="row missing">
     <span class="row-left"><span class="num">6</span><span class="title-block"><span class="subject">GI Scope (ส่องกล้องทางเดินอาหาร)</span><br><span class="lecturer">พว.ปฐมพร</span></span></span>
-    <span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
   </li>
 </ol>
 
@@ -102,27 +97,27 @@
 <ol class="list">
   <li class="row">
     <span class="row-left"><span class="num">7</span><span class="title-block"><span class="subject">DISE &amp; Modified UPPP</span><br><span class="lecturer">พว.สุภาวดี</span></span></span>
-    <span class="row-right"><a class="chip ok" href="01-dise-uppp.pdf">Slides ›</a><span class="chip no">— Notes</span></span>
+    <span class="row-right"><a class="btn" data-goatcounter-click="01-dise-uppp.pdf" href="01-dise-uppp.pdf">เปิดสไลด์ ›</a></span>
   </li>
   <li class="row">
     <span class="row-left"><span class="num">8</span><span class="title-block"><span class="subject">Sialendoscopy</span><br><span class="lecturer">พว.นฤมล</span></span></span>
-    <span class="row-right"><a class="chip ok" href="02-sialendoscopy.pdf">Slides ›</a><span class="chip no">— Notes</span></span>
+    <span class="row-right"><a class="btn" data-goatcounter-click="02-sialendoscopy.pdf" href="02-sialendoscopy.pdf">เปิดสไลด์ ›</a></span>
   </li>
   <li class="row">
     <span class="row-left"><span class="num">9</span><span class="title-block"><span class="subject">Emergency Management in ENT</span><br><span class="lecturer">พว.กร</span></span></span>
-    <span class="row-right"><a class="chip ok" href="03-emergency-ent.pdf">Slides ›</a><span class="chip no">— Notes</span></span>
+    <span class="row-right"><a class="btn" data-goatcounter-click="03-emergency-ent.pdf" href="03-emergency-ent.pdf">เปิดสไลด์ ›</a></span>
   </li>
   <li class="row">
     <span class="row-left"><span class="num">10</span><span class="title-block"><span class="subject">Neuro Navigator: Usage &amp; Maintenance</span><br><span class="lecturer">พว.ธนัชพร</span></span></span>
-    <span class="row-right"><a class="chip ok" href="04-navigator-usage.pdf">Slides ›</a><a class="chip sum" href="../../neuro-navigator/2026-09-16-navigator-usage-maintenance.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../neuro-navigator/2026-09-16-navigator-usage-maintenance.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="04-navigator-usage.pdf" href="04-navigator-usage.pdf">เปิดสไลด์ ›</a></span>
   </li>
   <li class="row">
     <span class="row-left"><span class="num">11</span><span class="title-block"><span class="subject">Neuro Navigator: Apply</span><br><span class="lecturer">พว.จันจิรา</span></span></span>
-    <span class="row-right"><a class="chip ok" href="05-navigator-apply.pdf">Slides ›</a><a class="chip sum" href="../../neuro-navigator/2026-09-16-navigator-application-neurosurgery.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../neuro-navigator/2026-09-16-navigator-application-neurosurgery.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="05-navigator-apply.pdf" href="05-navigator-apply.pdf">เปิดสไลด์ ›</a></span>
   </li>
   <li class="row">
     <span class="row-left"><span class="num">12</span><span class="title-block"><span class="subject">Endoscopic Neurosurgery</span><br><span class="lecturer">พว.ธนพรรณ</span></span></span>
-    <span class="row-right"><a class="chip ok" href="06-endoscopic-neuro.pdf">Slides ›</a><a class="chip sum" href="../../neuro-navigator/2026-09-16-endoscopic-neurosurgery.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../neuro-navigator/2026-09-16-endoscopic-neurosurgery.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="06-endoscopic-neuro.pdf" href="06-endoscopic-neuro.pdf">เปิดสไลด์ ›</a></span>
   </li>
 </ol>
 
@@ -130,15 +125,15 @@
 <ol class="list">
   <li class="row">
     <span class="row-left"><span class="num">13</span><span class="title-block"><span class="subject">Ophthalmic Anatomy &amp; Physiology</span><br><span class="lecturer">ผศ.พญ.เพียงพร</span></span></span>
-    <span class="row-right"><a class="chip ok" href="07-ophthalmic-anatomy.pdf">Slides ›</a><span class="chip no">— Notes</span></span>
+    <span class="row-right"><a class="btn" data-goatcounter-click="07-ophthalmic-anatomy.pdf" href="07-ophthalmic-anatomy.pdf">เปิดสไลด์ ›</a></span>
   </li>
-  <li class="row row-partial">
+  <li class="row missing">
     <span class="row-left"><span class="num">14</span><span class="title-block"><span class="subject">Ophthalmic Surgery</span><br><span class="lecturer">รศ.นพ.พิทยา</span></span></span>
-    <span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
   </li>
   <li class="row">
     <span class="row-left"><span class="num">15</span><span class="title-block"><span class="subject">Clinical ENT Anatomy &amp; Surgery</span><br><span class="lecturer">รศ.นพ.ภาวิน</span></span></span>
-    <span class="row-right"><a class="chip ok" href="08-clinical-ent-anatomy.pdf">Slides ›</a><span class="chip no">— Notes</span></span>
+    <span class="row-right"><a class="btn" data-goatcounter-click="08-clinical-ent-anatomy.pdf" href="08-clinical-ent-anatomy.pdf">เปิดสไลด์ ›</a></span>
   </li>
 </ol>
 
@@ -146,97 +141,134 @@
 <ol class="list">
   <li class="row">
     <span class="row-left"><span class="num">16</span><span class="title-block"><span class="subject">Sterilization</span><br><span class="lecturer">พว.กุลวรา</span></span></span>
-    <span class="row-right"><a class="chip ok" href="09-sterilization.pdf">Slides ›</a><a class="chip sum" href="../../sterilization/2026-09-18-sterilization.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../sterilization/2026-09-18-sterilization.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="09-sterilization.pdf" href="09-sterilization.pdf">เปิดสไลด์ ›</a></span>
   </li>
   <li class="row">
     <span class="row-left"><span class="num">17</span><span class="title-block"><span class="subject">Loaner Instrument</span><br><span class="lecturer">พว.หทัยา</span></span></span>
-    <span class="row-right"><a class="chip ok" href="10-loaner.pdf">Slides ›</a><span class="chip no">— Notes</span></span>
+    <span class="row-right"><a class="btn" data-goatcounter-click="10-loaner.pdf" href="10-loaner.pdf">เปิดสไลด์ ›</a></span>
   </li>
-  <li class="row row-partial">
+  <li class="row missing">
     <span class="row-left"><span class="num">18</span><span class="title-block"><span class="subject">Hand-off Communication</span><br><span class="lecturer">พว.สุดารัตน์</span></span></span>
-    <span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
   </li>
 </ol>
 
 <div class="day-header">23 ก.ย.</div>
 <ol class="list">
-  <li class="row row-partial">
+  <li class="row missing">
     <span class="row-left"><span class="num">19</span><span class="title-block"><span class="subject">Surgery in Neurology</span><br><span class="lecturer">ศ.นพ.บรรพต</span></span></span>
-    <span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
   </li>
   <li class="row">
     <span class="row-left"><span class="num">20</span><span class="title-block"><span class="subject">ERAS: Concepts &amp; How to Implement</span><br><span class="lecturer">รศ.พญ.มิ่งขวัญ</span></span></span>
-    <span class="row-right"><a class="chip ok" href="11-eras.pdf">Slides ›</a><a class="chip sum" href="../../eras/2026-09-23-eras-periop.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../eras/2026-09-23-eras-periop.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="11-eras.pdf" href="11-eras.pdf">เปิดสไลด์ ›</a></span>
   </li>
   <li class="row">
     <span class="row-left"><span class="num">21</span><span class="title-block"><span class="subject">Neurology Anatomy &amp; Surgery</span><br><span class="lecturer">ผศ.นพ.ปฤณัต</span></span></span>
-    <span class="row-right"><a class="chip ok" href="12-neuro-anatomy.pdf">Slides ›</a><a class="chip sum" href="../../neuro-anatomy-surgery/2026-09-23-neuro-anatomy-surgery.html">Notes ›</a></span>
+    <span class="row-right"><a class="btn sum" href="../../neuro-anatomy-surgery/2026-09-23-neuro-anatomy-surgery.html">📝 สรุป ›</a><a class="btn" data-goatcounter-click="12-neuro-anatomy.pdf" href="12-neuro-anatomy.pdf">เปิดสไลด์ ›</a></span>
   </li>
 </ol>
 
-<div class="day-header">25 ก.ย. <span class="future-tag">ยังไม่ถึงวันสอน</span></div>
+<div class="day-header">25 ก.ย. <span class="future-tag">วันนี้</span></div>
 <ol class="list">
-  <li class="row row-partial"><span class="row-left"><span class="num">22</span><span class="title-block"><span class="subject">OBGYN Anatomy &amp; Surgery</span><br><span class="lecturer">ผศ.นพ.พิสุทธิ์</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">23</span><span class="title-block"><span class="subject">Periop OBGYN</span><br><span class="lecturer">พว.ฐิติยา</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">24</span><span class="title-block"><span class="subject">Periop GYN: Robotic</span><br><span class="lecturer">พว.สุชาดา</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">25</span><span class="title-block"><span class="subject">Robotic Surgery in GYN</span><br><span class="lecturer">ผศ.นพ.บุญเลิศ</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">26</span><span class="title-block"><span class="subject">Periop Ophthalmic Nursing</span><br><span class="lecturer">พว.อัจฉราวดี</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">27</span><span class="title-block"><span class="subject">MEWS / Pressure Injury in OR</span><br><span class="lecturer">พว.นพเก</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-</ol>
-
-<div class="day-header">28 ก.ย. <span class="future-tag">ยังไม่ถึงวันสอน</span></div>
-<ol class="list">
-  <li class="row row-partial"><span class="row-left"><span class="num">28</span><span class="title-block"><span class="subject">Periop Vascular Surgery</span><br><span class="lecturer">พว.ศันศนีย์</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">29</span><span class="title-block"><span class="subject">Craniomaxillofacial &amp; Surgery</span><br><span class="lecturer">ศ.คลินิกเกียรติคุณ นพ.อภิรักษ์</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-</ol>
-
-<div class="day-header">29 ก.ย. <span class="future-tag">ยังไม่ถึงวันสอน</span></div>
-<ol class="list">
-  <li class="row row-partial"><span class="row-left"><span class="num">30</span><span class="title-block"><span class="subject">Urogyne Pelvic Floor</span><br><span class="lecturer">ผศ.พญ.พัทยา</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">31</span><span class="title-block"><span class="subject">Postop Nursing: Recovery</span><br><span class="lecturer">พว.สรรสณีย์</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">32</span><span class="title-block"><span class="subject">ผู้ป่วยพิเศษ (เด็ก/ผู้สูงอายุ)</span><br><span class="lecturer">พว.สรรสณีย์</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">33</span><span class="title-block"><span class="subject">Spine Anatomy &amp; Surgery</span><br><span class="lecturer">ผศ.นพ.เอกพจน์</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-</ol>
-
-<div class="day-header">30 ก.ย. <span class="future-tag">ยังไม่ถึงวันสอน</span></div>
-<ol class="list">
-  <li class="row row-postponed">
-    <span class="row-left"><span class="num">34</span><span class="title-block"><span class="subject">Thoracic System</span><br><span class="lecturer">ผศ.นพ.ปุณณฤกษ์ ทองเจริญ · เลื่อนจากครั้งที่ 1</span></span></span>
-    <span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span>
+  <li class="row">
+    <span class="row-left"><span class="num">22</span><span class="title-block"><span class="subject">OBGYN Anatomy &amp; Surgery</span><br><span class="lecturer">ผศ.นพ.พิสุทธิ์</span></span></span>
+    <span class="row-right"><a class="btn" data-goatcounter-click="13-obgyn-anatomy.pdf" href="13-obgyn-anatomy.pdf">เปิดสไลด์ ›</a></span>
   </li>
-  <li class="row row-partial"><span class="row-left"><span class="num">35</span><span class="title-block"><span class="subject">Breast Anatomy &amp; Physiology</span><br><span class="lecturer">อ.ดร.นพ.ธนากร</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">36</span><span class="title-block"><span class="subject">Periop Breast Surgery</span><br><span class="lecturer">พว.ธันยชนก</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">37</span><span class="title-block"><span class="subject">Plastic: Palatoplasty</span><br><span class="lecturer">พว.อุชุตา</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">23</span><span class="title-block"><span class="subject">Periop OBGYN</span><br><span class="lecturer">พว.ฐิติยา</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">24</span><span class="title-block"><span class="subject">Periop GYN: Robotic</span><br><span class="lecturer">พว.สุชาดา</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">25</span><span class="title-block"><span class="subject">Robotic Surgery in GYN</span><br><span class="lecturer">ผศ.นพ.บุญเลิศ</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">26</span><span class="title-block"><span class="subject">Periop Ophthalmic Nursing</span><br><span class="lecturer">พว.อัจฉราวดี</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row">
+    <span class="row-left"><span class="num">27</span><span class="title-block"><span class="subject">MEWS / Pressure Injury in OR</span><br><span class="lecturer">พว.นพเก</span></span></span>
+    <span class="row-right"><a class="btn" data-goatcounter-click="14-mews-pressure-injury.pdf" href="14-mews-pressure-injury.pdf">เปิดสไลด์ ›</a></span>
+  </li>
 </ol>
 
-<div class="day-header">1 ต.ค. <span class="future-tag">ยังไม่ถึงวันสอน</span></div>
+<div class="day-header">28 ก.ย.</div>
 <ol class="list">
-  <li class="row row-partial"><span class="row-left"><span class="num">38</span><span class="title-block"><span class="subject">Periop GI: Vascular Sealing</span><br><span class="lecturer">พว.พจนีย์</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">39</span><span class="title-block"><span class="subject">Infection Control in OR</span><br><span class="lecturer">พว.ศิริพร</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
-  <li class="row row-partial"><span class="row-left"><span class="num">40</span><span class="title-block"><span class="subject">Organ Transplant: General Principle</span><br><span class="lecturer">ผศ.นพ.ประวัฒน์</span></span></span><span class="row-right"><span class="chip no">— Slides</span><span class="chip no">— Notes</span></span></li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">28</span><span class="title-block"><span class="subject">Periop Vascular Surgery</span><br><span class="lecturer">พว.ศันศนีย์</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">29</span><span class="title-block"><span class="subject">Craniomaxillofacial &amp; Surgery</span><br><span class="lecturer">ศ.คลินิกเกียรติคุณ นพ.อภิรักษ์</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+</ol>
+
+<div class="day-header">29 ก.ย.</div>
+<ol class="list">
+  <li class="row missing">
+    <span class="row-left"><span class="num">30</span><span class="title-block"><span class="subject">Urogyne Pelvic Floor</span><br><span class="lecturer">ผศ.พญ.พัทยา</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">31</span><span class="title-block"><span class="subject">Postop Nursing: Recovery</span><br><span class="lecturer">พว.สรรสณีย์</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">32</span><span class="title-block"><span class="subject">ผู้ป่วยพิเศษ (เด็ก/ผู้สูงอายุ)</span><br><span class="lecturer">พว.สรรสณีย์</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">33</span><span class="title-block"><span class="subject">Spine Anatomy &amp; Surgery</span><br><span class="lecturer">ผศ.นพ.เอกพจน์</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+</ol>
+
+<div class="day-header">30 ก.ย.</div>
+<ol class="list">
+  <li class="row postponed">
+    <span class="row-left"><span class="num">34</span><span class="title-block"><span class="subject">Thoracic System</span><br><span class="lecturer">ผศ.นพ.ปุณณฤกษ์</span></span></span>
+    <span class="row-right"><span class="badge-postpone">เลื่อนจากครั้งที่ 1</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">35</span><span class="title-block"><span class="subject">Breast Anatomy &amp; Physiology</span><br><span class="lecturer">อ.ดร.นพ.ธนากร</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">36</span><span class="title-block"><span class="subject">Periop Breast Surgery</span><br><span class="lecturer">พว.ธันยชนก</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">37</span><span class="title-block"><span class="subject">Plastic: Palatoplasty</span><br><span class="lecturer">พว.อุชุตา</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+</ol>
+
+<div class="day-header">1 ต.ค.</div>
+<ol class="list">
+  <li class="row missing">
+    <span class="row-left"><span class="num">38</span><span class="title-block"><span class="subject">Periop GI: Vascular Sealing</span><br><span class="lecturer">พว.พจนีย์</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">39</span><span class="title-block"><span class="subject">Infection Control in OR</span><br><span class="lecturer">พว.ศิริพร</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
+  <li class="row missing">
+    <span class="row-left"><span class="num">40</span><span class="title-block"><span class="subject">Organ Transplant: General Principle</span><br><span class="lecturer">ผศ.นพ.ประวัฒน์</span></span></span>
+    <span class="row-right"><span class="badge-missing">⚠️ รอสไลด์</span></span>
+  </li>
 </ol>
 
 <div class="footnote"><b>คำอธิบาย</b>
-• Notes = มีสรุปเนื้อหา (แตะเปิดได้) · Slides = มีไฟล์สไลด์
-• 25 ก.ย.–1 ต.ค. ยังไม่ถึงวันสอน → ยังว่างทั้ง 2 ช่อง
-• ยังรอ blueprint เต็มกำหนดช่วงข้อ (a–b)</div>
-<script>
-(function(){
-  var btn = document.getElementById('darkToggle');
-  var root = document.documentElement;
-  function setTheme(theme){
-    root.setAttribute('data-theme', theme);
-    btn.textContent = theme === 'dark' ? '☀️' : '🌙';
-    try { localStorage.setItem('exam2oct-theme', theme); } catch(e){}
-  }
-  var saved = null;
-  try { saved = localStorage.getItem('exam2oct-theme'); } catch(e){}
-  setTheme(saved || 'light');
-  btn.addEventListener('click', function(){
-    var cur = root.getAttribute('data-theme') || 'light';
-    setTheme(cur === 'dark' ? 'light' : 'dark');
-  });
-})();
-</script>
+• ปุ่ม 📝 สรุป = มีสรุปเนื้อหา · ปุ่ม เปิดสไลด์ = มีไฟล์สไลด์ (นับการดาวน์โหลดแยกตามไฟล์)
+• Thoracic System (ข้อ 73–86) เลื่อนจากสอบครั้งที่ 1 มาสอบครั้งที่ 2
+• 25 ก.ย.–1 ต.ค. = คาบยังไม่จบ/ยังไม่ถึงวันสอน → ยังรอสไลด์-สรุป
+• ยังรอ blueprint ทางการกำหนดช่วงข้อ (a–b) ของครั้งที่ 2</div>
 </body>
 </html>
