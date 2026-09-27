@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>พยคร 627 Flashcard — สอบครั้งที่ 2 (2 ต.ค. 2569)</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --accent: #4aa3ff;
+    --card-bg: #1a2029;
+    --card-bg-2: #212836;
+    --text: #e8edf3;
+    --text-dim: #8b98a9;
+    --border: #2a3441;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", "TH Sarabun New", "Noto Sans Thai", system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    gap: 20px;
+  }
+  h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.3px;
+  }
+  .progress-wrap {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .progress-text {
+    font-size: 0.95rem;
+    color: var(--text-dim);
+  }
+  .progress-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), #6fc3ff);
+    border-radius: 4px;
+    transition: width 0.25s ease;
+  }
+  .card-scene {
+    width: 100%;
+    max-width: 640px;
+    height: 380px;
+    perspective: 1600px;
+  }
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(.4,.2,.2,1);
+  }
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+  .card-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 30px;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    background: linear-gradient(150deg, var(--card-bg), var(--card-bg-2));
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.03);
+    overflow-y: auto;
+  }
+  .card-face::-webkit-scrollbar { width: 6px; }
+  .card-face::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .card-face.front {
+    z-index: 2;
+  }
+  .card-face.back {
+    transform: rotateY(180deg);
+    border-color: rgba(74,163,255,0.35);
+  }
+  .face-label {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 600;
+  }
+  .face-label.back-label { color: var(--accent); }
+  .card-text {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    text-align: center;
+    font-weight: 500;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-top: 12px;
+  }
+  .card-face.back .card-text {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #d7e6fb;
+  }
+  .card-text b { color: var(--accent); font-weight: 700; }
+  .hint {
+    position: absolute;
+    bottom: 14px;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    opacity: 0.7;
+  }
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  button {
+    background: var(--card-bg-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  button:hover {
+    background: #262f3d;
+    border-color: var(--accent);
+  }
+  button:active {
+    transform: scale(0.96);
+  }
+  button.primary {
+    background: var(--accent);
+    color: #06131f;
+    font-weight: 600;
+    border-color: var(--accent);
+  }
+  button.primary:hover {
+    background: #6fc3ff;
+  }
+  .shuffle-active {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+  .footer-note {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-align: center;
+    max-width: 640px;
+    opacity: 0.75;
+  }
+  @media (max-width: 480px) {
+    .card-scene { height: 420px; }
+    .card-text { font-size: 1.1rem; }
+    button { padding: 10px 14px; font-size: 0.85rem; }
+  }
+</style>
+</head>
+<body>
+
+<h1>🩺 พยคร 627 Flashcard — สอบครั้งที่ 2 (2 ต.ค. 2569) · 361 การ์ด</h1>
+
+<div class="progress-wrap">
+  <div class="progress-text" id="progressText">การ์ด 1/206</div>
+  <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+</div>
+
+<div class="card-scene">
+  <div class="card" id="card">
+    <div class="card-face front">
+      <span class="face-label">คำถาม</span>
+      <div class="card-text" id="frontText"></div>
+      <span class="hint">คลิกเพื่อดูคำตอบ</span>
+    </div>
+    <div class="card-face back">
+      <span class="face-label back-label">คำตอบ</span>
+      <div class="card-text" id="backText"></div>
+      <span class="hint">คลิกเพื่อกลับด้าน</span>
+    </div>
+  </div>
+</div>
+
+<div class="controls" style="margin-bottom:6px"><select id="tagFilter" style="background:#212836;color:#e8edf3;border:1px solid #2a3441;border-radius:12px;padding:10px 14px;font-family:inherit;font-size:.9rem"></select></div>
+<div class="controls">
+  <button id="prevBtn">⟵ ก่อนหน้า</button>
+  <button id="flipBtn" class="primary">🔄 พลิกการ์ด</button>
+  <button id="nextBtn">ถัดไป ⟶</button>
+  <button id="shuffleBtn">🔀 สับการ์ด</button>
+</div>
+
+<div class="footer-note">
+  คีย์บอร์ด: ← ก่อนหน้า · → ถัดไป · Space/Enter พลิกการ์ด
+</div>
+
+<script>
+const CARDS = [{"f": "ต้นทุน (Cost) คำนวณจากอะไร?", "b": "ราคา (Price) × ปริมาณ (Quantity) ของทรัพยากรที่ใช้", "t": "CostAnalysis"}, {"f": "ต้นทุนทางตรง (Direct Cost) ของโรงพยาบาลประกอบด้วยอะไรบ้าง (3 ก้อน)?", "b": "ต้นทุนแรงงาน (LC) / ต้นทุนค่าวัสดุสิ้นเปลือง (MC) / ต้นทุนลงทุน (CC)", "t": "CostAnalysis"}, {"f": "Full Cost ของหน่วยบริการคำนวณอย่างไร?", "b": "ต้นทุนทางตรงของหน่วยบริการ (MC+LC+CC) + ต้นทุนทางอ้อมที่กระจายมาจากหน่วยสนับสนุน", "t": "CostAnalysis"}, {"f": "ปัจจัย 3C ที่ทำให้ต้องวิเคราะห์ต้นทุนคืออะไร?", "b": "Customer / Competition / Change", "t": "CostAnalysis"}, {"f": "การเปลี่ยนระบบการเงินสู่หลักประกันสุขภาพถ้วนหน้าทำให้เกิดผลอย่างไรกับโรงพยาบาลรัฐ?", "b": "โรงพยาบาลมากกว่า 80% ขาดสภาพคล่อง", "t": "CostAnalysis"}, {"f": "ขั้นตอนการวิเคราะห์ต้นทุนมีกี่ขั้นตอน อะไรบ้าง?", "b": "5 ขั้นตอน: กำหนด Cost Center / แจกแจงหน่วยบริการ-สนับสนุน / รวบรวมต้นทุนทางตรง / กำหนดเกณฑ์กระจายต้นทุน / รวมต้นทุนทางตรง+ทางอ้อม", "t": "CostAnalysis"}, {"f": "สูตรอัตราเงินเดือนบุคลากรคืออะไร?", "b": "จำนวนเงินเดือน + 10% + เงินประจำตำแหน่ง", "t": "CostAnalysis"}, {"f": "แพทย์ A เงินเดือน 30,000 บาท เงินประจำตำแหน่ง 5,000 บาท อัตราเงินเดือนต่อเดือนเท่าไร?", "b": "38,000 บาทต่อเดือน / 1,900 บาทต่อวัน / 316.67 บาทต่อชั่วโมง", "t": "CostAnalysis"}, {"f": "สูตรค่าเสื่อมราคาครุภัณฑ์คืออะไร?", "b": "(ราคาซื้อ − ราคาซาก) ÷ อายุการใช้งาน", "t": "CostAnalysis"}, {"f": "โคมไฟผ่าตัด 2 ตัว ราคาตัวละ 330,000 บาท อายุใช้งาน 5 ปี ราคาซาก 0 ค่าเสื่อมราคาต่อปีเท่าไร?", "b": "132,000 บาทต่อปี", "t": "CostAnalysis"}, {"f": "สูตรค่าเสื่อมราคาอาคารเมื่อมีพื้นที่ใช้สอยร่วมคืออะไร?", "b": "[ราคาอาคาร × (พื้นที่เฉพาะ+พื้นที่ร่วม)] ÷ พื้นที่ใช้สอยอาคารทั้งหมด ÷ อายุการใช้งาน", "t": "CostAnalysis"}, {"f": "อาคาร A ราคา 200,000,000 บาท อายุ 20 ปี OR1 พื้นที่รวม 480 ตร.ม. จากพื้นที่อาคารรวม 1,200 ตร.ม. ค่าเสื่อมราคาอาคารของ OR1 ต่อปีเท่าไร?", "b": "4,000,000 บาทต่อปี", "t": "CostAnalysis"}, {"f": "สูตรต้นทุนวัสดุสิ้นเปลือง (2 สูตร) คืออะไร?", "b": "สูตร1: [ราคาต่อหน่วย+(ต้นทุนอบฆ่าเชื้อ×จำนวนครั้งอบฆ่าเชื้อ)]÷จำนวนครั้งที่ใช้ / สูตร2: บวกค่าบริหารจัดการ 10%", "t": "CostAnalysis"}, {"f": "หลักการตีราคาวัสดุที่จัดซื้อหลายราคาใช้หลักอะไร?", "b": "FIFO (First In First Out) — ซื้อก่อนใช้ก่อน", "t": "CostAnalysis"}, {"f": "วัสดุที่ยังไม่หมดอายุแต่ยังไม่ได้ใช้งาน ต้องคิดเป็นต้นทุนหรือไม่?", "b": "ต้องคิดคำนวณต้นทุน (ถ้าหมดอายุ/เสื่อมสภาพแล้วไม่ต้องคิด)", "t": "CostAnalysis"}, {"f": "ครุภัณฑ์ที่มีอายุเกินอายุการใช้งานแล้ว คิดค่าเสื่อมราคาอย่างไร?", "b": "ไม่ต้องคิด เพราะมีค่าเป็นศูนย์", "t": "CostAnalysis"}, {"f": "อายุการใช้งานอาคารถาวรตามกรมบัญชีกลาง 2544 อยู่ในช่วงใด (ค่ากลาง)?", "b": "15-40 ปี (ค่ากลาง 27.5 ปี)", "t": "CostAnalysis"}, {"f": "ตัวอย่างแนวทางลดต้นทุนในห้องผ่าตัดมีอะไรบ้าง (5 แนวทาง)?", "b": "Reusable Instruments / One Day Surgery (ODS) / นวัตกรรม / FIFO สำหรับของ sterile / บริหารจัดการขยะและสารพิษ", "t": "CostAnalysis"}, {"f": "Bowtie model มีองค์ประกอบหลักกี่ส่วน อะไรบ้าง", "b": "12 องค์ประกอบ: Objective/KPI/Target / Hazardous Event / Threat / Loss of Control / Control Measures / Consequence / Recovery Measures / ระดับความเสี่ยง / Leading KRI / Potential Measures-KRI / Potential Outcome / Lagging KRI", "t": "RiskManagement"}, {"f": "Leading KRI อยู่ตำแหน่งไหนของ Bowtie เทียบกับ Lagging KRI", "b": "Leading KRI อยู่ก่อนเหตุการณ์ (เตือนก่อนเกิด) / Lagging KRI อยู่หลังเหตุการณ์ (บอกว่ากู้คืนได้หรือไม่)", "t": "RiskManagement"}, {"f": "FMEA อยู่ฝั่งเชิงรุกหรือเชิงรับของการบริหารความเสี่ยง", "b": "เชิงรุก (proactive) / ส่วน RCA อยู่ฝั่งเชิงรับ", "t": "RiskManagement"}, {"f": "ปัจจัยภายในของกระบวนการทำงานมีกี่ด้าน อะไรบ้าง", "b": "5 ด้าน: บุคลากร / งบประมาณ / สภาพแวดล้อม / เครื่องมืออุปกรณ์ / ข้อมูล", "t": "RiskManagement"}, {"f": "กรอบตรวจสอบปัจจัยภายใน 4 มิติคืออะไร", "b": "People / Process / Technology / Environment", "t": "RiskManagement"}, {"f": "ต้องมีเจ้าหน้าที่กี่คนขึ้นไปจึงจำเป็นต้องทำ Risk assessment", "b": "5 คนหรือมากกว่า (≥5)", "t": "RiskManagement"}, {"f": "เส้นทางผู้ป่วยผ่าตัดเรียงลำดับอย่างไร", "b": "OPD → WARD → WR → OR → RR → ICU/ward/D-C", "t": "RiskManagement"}, {"f": "สถิติ Sentinel Event สะสม 2005-2016 อันดับ 1 และ 2 คืออะไร", "b": "อันดับ1 Wrong-patient/site/procedure = 1281 / อันดับ2 Unintended Retention of Foreign Body = 1231", "t": "RiskManagement"}, {"f": "Risk Register มีกี่คอลัมน์หลัก และช่วงคะแนนระดับความเสี่ยงเท่าไร", "b": "10 คอลัมน์ (ลำดับ→ผู้รับผิดชอบ) / คะแนน Risk level ช่วง 1-4", "t": "RiskManagement"}, {"f": "เมทริกซ์ความเสี่ยงอย่างง่าย 2x2 ช่องใดมีระดับความเสี่ยงสูงสุด และคำนวณอย่างไร", "b": "ช่อง A = เกิดบ่อย(2) x รุนแรงมาก(2) = 4 (สูงสุด) / สูตร = โอกาสเกิด x ผลกระทบ", "t": "RiskManagement"}, {"f": "เกณฑ์มหิดล โอกาสเกิด >50% ได้คะแนนเท่าไร", "b": "คะแนน 4 = สูง (ไม่ใช่ 5)", "t": "RiskManagement"}, {"f": "กลยุทธ์จัดการความเสี่ยง 4 แบบ (4T) มีอะไรบ้าง", "b": "Treat / Terminate / Transfer / Take", "t": "RiskManagement"}, {"f": "ระดับความเสี่ยงสูง (2 ระดับบน) มหิดลบังคับหรือให้พิจารณาเอง ใช้กลยุทธ์อะไร", "b": "บังคับต้องจัดการลงมา / ใช้ Transfer และ-หรือ Treat", "t": "RiskManagement"}, {"f": "RCA อย่างง่ายมี 3 คำถามอะไรบ้าง", "b": "1.What เกิดอะไรขึ้น / 2.Why ทำไมจึงเกิด / 3.How จะป้องกันการเกิดซ้ำได้อย่างไร", "t": "RiskManagement"}, {"f": "Human Error เป็น root cause ของ RCA หรือไม่ เพราะอะไร", "b": "ไม่ใช่ เพราะเป็นธรรมชาติของมนุษย์ ห้ามไม่ได้ ต้องขุดลึกถึงสาเหตุเชิงระบบ", "t": "RiskManagement"}, {"f": "Human Error 3 ประเภทคืออะไร พร้อมลักษณะ", "b": "Knowledge-based (ปัญหาใหม่ คิดคำตอบผิด) / Rule-based (ไม่ปรับตามสถานการณ์ ใช้คำตอบผิด) / Skill-based (งานเคยชิน พลั้งเผลอ)", "t": "RiskManagement"}, {"f": "มาตรการแก้ไขที่อ่อนที่สุด (Weaker actions) คืออะไร", "b": "ฝึกอบรม / สร้างระบบเตือน / check ซ้ำ (ยังพึ่งพา Human Factors ที่ผิดพลาดได้เสมอ)", "t": "RiskManagement"}, {"f": "RCA มีกี่ขั้นตอน และขั้นใดต้องทำก่อนจัดประชุมผู้เกี่ยวข้อง", "b": "8 ขั้นตอน / ขั้น 1-6 ต้องทำก่อนจัดประชุม (ขั้น 7-8)", "t": "RiskManagement"}, {"f": "5 Tier Contributory Factors เรียงจาก Tier ที่ใกล้ผู้ป่วยที่สุดไปไกลที่สุด", "b": "Tier1 Substandard act → Tier2 Individuals&Environment → Tier3 Work&Team/Environment → Tier4 Management → Tier5 Ext.Environment", "t": "RiskManagement"}, {"f": "เกณฑ์วินิจฉัยสมองตายฉบับที่ 7 ประกาศวันที่เท่าไร", "b": "26 มกราคม 2554", "t": "OrganTransplant"}, {"f": "ภาวะอุณหภูมิกายต่ำเท่าไรต้องแยกออกก่อนวินิจฉัยสมองตาย", "b": "น้อยกว่า 32 องศาเซลเซียส", "t": "OrganTransplant"}, {"f": "Apnea test ทำอย่างไรจึงถือว่าให้ผลบวก", "b": "หยุดเครื่องช่วยหายใจอย่างน้อย 10 นาที แล้วไม่มีการเคลื่อนไหวทรวงอก/หน้าท้อง", "t": "OrganTransplant"}, {"f": "ระยะเวลาสังเกตไม่เปลี่ยนแปลงก่อนวินิจฉัยสมองตาย ผู้ใหญ่ vs ทารก 7วัน-2เดือน vs ทารก 2เดือน-1ปี", "b": "ผู้ใหญ่ 6 ชั่วโมง / ทารก 7วัน-2เดือน 48 ชั่วโมง / ทารก 2เดือน-1ปี 24 ชั่วโมง", "t": "OrganTransplant"}, {"f": "Type of Graft มี 4 ประเภทอะไรบ้าง", "b": "Autograft (ตัวเอง) / Isograft (ฝาแฝด) / Allograft (species เดียวกัน) / Xenograft (ต่าง species)", "t": "OrganTransplant"}, {"f": "Heartbeating donor กับ Nonheartbeating donor บริจาคอวัยวะต่างกันอย่างไร", "b": "Heartbeating บริจาคอวัยวะหลักได้ (heart, lung, liver, kidney, pancreas, small bowel) / Nonheartbeating บริจาคได้เฉพาะเนื้อเยื่อ (skin, bone, heart valves, blood vessel, corneas)", "t": "OrganTransplant"}, {"f": "Ischemic time ของ Heart, Liver, Kidney เท่าไร", "b": "Heart 4-6 hr. / Liver 24 hr. / Kidney 24-72 hr.", "t": "OrganTransplant"}, {"f": "ขนาดห้องผ่าตัดขั้นต่ำของ Donor room และ Recipient room", "b": "Donor 400 ft² (37 m²) / Recipient 600 ft² (60 m²)", "t": "OrganTransplant"}, {"f": "ทีม Emergency organ transplantation จำนวนบุคลากรเท่าไร", "b": "RN=4, PN=1 ต่อวัน / Retrieval RN=2 / Transplantation RN=2-3, PN=1-2", "t": "OrganTransplant"}, {"f": "Packing organ เพื่อขนส่งใช้ plastic bag กี่ชั้น และ perfusion+cooling ช่วยขยายเวลาถนอมอวัยวะเป็นเท่าไร", "b": "3 ชั้น / ขยายจาก 4 ชั่วโมง เป็น 6-7 ชั่วโมง", "t": "OrganTransplant"}, {"f": "ข้อห้ามผ่าตัดปลูกถ่ายหัวใจมีกี่ข้อ ยกตัวอย่าง", "b": "9 ข้อ เช่น อายุเกิน 65 ปี, ติดเชื้อรุนแรง, มะเร็งใน 5 ปีที่ผ่านมา, fixed pulmonary hypertension", "t": "OrganTransplant"}, {"f": "Double Ureteric stent ที่ใช้ใน Kidney transplantation ขนาดเท่าไร ตาม JCI standard ใด", "b": "4.8 Fr ตาม JCI standard ASC 7.4", "t": "OrganTransplant"}, {"f": "ปัจจัยที่ทำให้ actual donor ไม่กลายเป็น utilized donor มีกี่ข้อ ที่สำคัญคืออะไร", "b": "5 ข้อ เช่น ระบบ รพ.ไม่เอื้อ (แจ้งญาติผู้มีภาวะสมองตายเพียง 33%), ญาติไม่เข้าใจภาวะสมองตาย", "t": "OrganTransplant"}, {"f": "น้ำยาถนอมอวัยวะ 3 ชนิดที่ใช้คืออะไร", "b": "Custodial, UW solution, Euro-collins base", "t": "OrganTransplant"}, {"f": "เบอร์โทรศูนย์รับบริจาคอวัยวะ สภากาชาดไทยคือเบอร์อะไร", "b": "1666", "t": "OrganTransplant"}, {"f": "ก่อนส่งผู้บริจาคเข้า OR ต้องผ่านเงื่อนไขอะไรบ้าง", "b": "ญาติลงนามบริจาคอวัยวะ และประเมินสมองตาย 2 ครั้ง ห่างกัน 6 ชั่วโมง", "t": "OrganTransplant"}, {"f": "นิยาม Cold Ischemic Time (CIT) คืออะไร", "b": "ตั้งแต่ Clamp Artery ที่ Donor จนถึง Reperfusion ที่ Recipient", "t": "OrganTransplant"}, {"f": "บทบาทหลักของพยาบาลประสานงาน (Nurse Coordinator) คืออะไร และผ่าตัดนำอวัยวะออกทำตอนหัวใจเต้นอยู่หรือไม่", "b": "รวบรวมข้อมูลและแจ้งทีมที่เกี่ยวข้อง ไม่ใช่ผู้จัดสรรอวัยวะ / ผ่าตัดทำหลังประเมินสมองตายผ่านขณะหัวใจยังเต้นอยู่ ไม่ต้องรอหัวใจหยุด", "t": "OrganTransplant"}, {"f": "Modified Aldrete Score เกณฑ์คะแนนเท่าไรจึงย้ายออกจาก PACU ได้", "b": "รวม ≥ 9 (ประเมิน 5 ด้านๆ ละ 0-2: การเคลื่อนไหว / การหายใจ / ความดันโลหิต / ความรู้สึกตัว / O2 saturation)", "t": "Anesthesia"}, {"f": "PADSS เกณฑ์คะแนนเท่าไรจึงให้กลับบ้านได้", "b": "รวม ≥ 9 (ประเมิน สัญญาณชีพ / การเคลื่อนไหว / คลื่นไส้อาเจียน / ความปวด / เลือดออกจากแผล)", "t": "Anesthesia"}, {"f": "VAS ใช้สเกลเท่าไร", "b": "0-10 (0 = สบายดี / 10 = ปวดที่สุด)", "t": "Anesthesia"}, {"f": "NPO guideline: clear liquid, นมแม่, นมผง, อาหารเบา, อาหารหนัก/ไขมันสัตว์ งดกี่ชั่วโมง", "b": "clear liquid 2 ชม. / นมแม่ 4 ชม. / นมผง-นมอื่น 6 ชม. / อาหารเบา 6 ชม. / อาหารหนัก-ไขมันสัตว์ 8 ชม.", "t": "Anesthesia"}, {"f": "ASA classification 5 ระดับคืออะไร", "b": "ASA1 แข็งแรงดี / ASA2 โรคควบคุมได้ดี / ASA3 โรคหลายโรค อวัยวะสำคัญทำงานลดลง / ASA4 โรครุนแรงคุกคามชีวิต / ASA5 คาดอยู่ได้ไม่เกิน 24 ชม. (ต่อท้าย E = emergency)", "t": "Anesthesia"}, {"f": "Sellick's maneuver คืออะไร ทำเพื่ออะไร", "b": "กดที่ cricoid cartilage ระหว่าง induction (โดยเฉพาะ rapid sequence induction) ป้องกัน regurgitation/aspiration", "t": "Anesthesia"}, {"f": "GA with ETT ลำดับขั้นตอน 5 ขั้นคืออะไร", "b": "Obtain working IV → Intravenous induction → Intubation → Maintenance → Emergence, extubation", "t": "Anesthesia"}, {"f": "GWP ของยาสลบสูดดม (ต่อผ่าตัด 1 ชม.) เทียบเท่าขับรถกี่กม.", "b": "Sevoflurane 5-10 กม. / Nitrous oxide 100 กม. / Desflurane 200-400 กม. (สูงสุด)", "t": "Anesthesia"}, {"f": "Mallampati classification (ทั่วไป) Class I และ Class IV ต่างกันอย่างไร", "b": "Class I สัมพันธ์กับ laryngoscopy/ใส่ท่อง่ายที่สุด / Class IV ยากที่สุด", "t": "Anesthesia"}, {"f": "Ramsay Sedation Score ช่วงคะแนนเท่าไร", "b": "1-6 (จาก awake/anxious ถึง asleep/no response)", "t": "Anesthesia"}, {"f": "RASS ช่วงคะแนนเท่าไร", "b": "+4 combative ถึง -5 unarousable", "t": "Anesthesia"}, {"f": "Michael Jackson เสียชีวิตจากอะไร วันที่เท่าไร เป็นอุทาหรณ์เรื่องอะไร", "b": "เสียชีวิตจากการใช้ propofol อย่างไม่เหมาะสมนอกสถานพยาบาล 25 มิ.ย. 2009 / เตือนความเสี่ยงของ sedation ที่ขาดการเฝ้าระวังที่เหมาะสม", "t": "Anesthesia"}, {"f": "DOACs ที่ต้องหยุดก่อนผ่าตัดมีอะไรบ้าง", "b": "Dabigatran (Pradaxa) / Rivaroxaban (Xarelto) / Edoxaban (Lixiana) / Apixaban (Eliquis)", "t": "Anesthesia"}, {"f": "3 แกนของทางเดินหายใจ (airway axes) คืออะไร และ sniffing position ทำอย่างไร", "b": "oral axis (OA), pharyngeal axis (PA), laryngeal axis (LA) / cervical flexion 30-45° ร่วมกับ extend atlanto-occipital ให้ 3 แกนตรงกัน", "t": "Anesthesia"}, {"f": "ประกาศแพทยสภาจำกัดผู้ใช้ยาระงับความรู้สึกกลุ่มใดบ้าง (วันที่ประกาศ)", "b": "contrast media / intravenous anesthetic agents (thiopental sodium, ketamine hydrochloride, propofol, etomidate) / ประกาศ 22 ต.ค. 2568", "t": "Anesthesia"}, {"f": "hyoid-mental distance เท่าไรบ่งชี้ difficult airway", "b": "น้อยกว่า 3 ซม.", "t": "Anesthesia"}, {"f": "AHI cutoff แบ่งความรุนแรง sleep apnea อย่างไร", "b": "<5 ปกติ / 5-15 mild / 15-30 moderate / >30 severe", "t": "DISEUPPP"}, {"f": "VOTE classification ใน DISE ประเมิน 4 โครงสร้างอะไรบ้าง", "b": "Velum (palate) / Oropharyngeal lateral walls (tonsils) / Tongue / Epiglottis", "t": "DISEUPPP"}, {"f": "ผู้ป่วยทำ DISE ผ่าน 2 ระยะอะไรบ้าง ตามลำดับ", "b": "AWAKE ก่อน แล้วเข้าสู่ SEDATION", "t": "DISEUPPP"}, {"f": "ยาพ่นเตรียมก่อนทำ DISE คืออะไร", "b": "จมูก: 4% xylocaine + 3% ephedrine / คอ: 10% xylocaine", "t": "DISEUPPP"}, {"f": "ค่า BIS ระหว่างทำ DISE ต้องอยู่ในช่วงใด", "b": "50-70", "t": "DISEUPPP"}, {"f": "Mallampati score (ENT exam) 4 class ต่างกันอย่างไร", "b": "Class1 เห็น soft palate ครบ / Class2 เห็น uvula ครบ / Class3 เห็นฐาน uvula / Class4 ไม่เห็น soft palate เลย", "t": "DISEUPPP"}, {"f": "เครื่องมือถ่างปากที่ใช้ผ่าตัด UPPP คืออะไร และต้องระวังการกดทับจากอะไร", "b": "MC-I-VOR / ระวัง MAYO SUSPENSION กดทับหน้าอก", "t": "DISEUPPP"}, {"f": "แนวปฏิบัติป้องกันแผลกดทับในห้องผ่าตัด UPPP ใช้ใบอะไร", "b": "MEWS (Modify Early Warning Sign)", "t": "DISEUPPP"}, {"f": "นวัตกรรม Magic Suspension คิดค้นโดยใคร ใช้ทำอะไร", "b": "คุณอรณี กลิ่นศรีสุข / อุปกรณ์โลหะรองรับ-ถ่างขากรรไกร ลดการกดทับผ่าตัดหูคอจมูก", "t": "DISEUPPP"}, {"f": "OSA หยุดหายใจเฉลี่ยกี่ครั้งต่อชั่วโมง", "b": "เฉลี่ย 5 ครั้ง/ชม. ไปจนถึงมากกว่า 30 ครั้ง/ชม.", "t": "DISEUPPP"}, {"f": "การรักษา OSA ตามความรุนแรง 3 ระดับคืออะไร", "b": "Mild = ปรับพฤติกรรม (นอนตะแคง ลดน้ำหนัก) / Moderate = CPAP / Severe = ผ่าตัด (UPPP, DISE, Nasal surgery, Palatal surgery)", "t": "DISEUPPP"}, {"f": "รอบการทำเลเซอร์ Er:YAG palatal stiffening กี่ครั้ง ห่างกันอย่างไร", "b": "3 ครั้ง: 2 ครั้งแรกสัปดาห์เว้นสัปดาห์ ครั้งที่ 3 เว้น 1 เดือน", "t": "DISEUPPP"}, {"f": "Inspire implant กระตุ้นเส้นประสาทใด เกี่ยวข้องกล้ามเนื้อกลุ่มใด", "b": "Hypoglossal nerve / กล้ามเนื้อ C1, GH (geniohyoid), GG (genioglossus), T/V, HG (hyoglossus) — กระตุ้น GG,TV หลีกเลี่ยง HG", "t": "DISEUPPP"}, {"f": "ตำแหน่งแผลผ่าตัดฝัง Inspire (neck, chest) ยาวเท่าไร", "b": "Neck: กึ่งกลาง hyoid-mandible ยาว 4-5 ซม. / Chest: ช่องระหว่างซี่โครงที่ 2-3 ยาว 5 ซม. ห่าง sternal margin 3 ซม.", "t": "DISEUPPP"}, {"f": "NIM electrode 2 channel สีอะไรแทนกล้ามเนื้อใด", "b": "Red = Hyoglossus / Blue = Genioglossus", "t": "DISEUPPP"}, {"f": "หลังฝัง Inspire ต้องหลีกเลี่ยงกิจกรรมหนักนานเท่าไร และนัด tuning visit เมื่อไร", "b": "หลีกเลี่ยงกิจกรรมหนัก 4 สัปดาห์ / นัด tuning visit ที่ 4 สัปดาห์หลังผ่าตัด", "t": "DISEUPPP"}, {"f": "ส่วนประกอบของนิ่วในท่อน้ำลายคืออะไร", "b": "แคลเซียมคาร์บอเนต 75% + แคลเซียมฟอสเฟต 10%", "t": "Sialendoscopy"}, {"f": "ตำแหน่งพบนิ่วในท่อน้ำลายบ่อยที่สุดคือที่ใด กี่เปอร์เซ็นต์", "b": "Wharton's Duct (Submandibular gland) พบ 80-90%", "t": "Sialendoscopy"}, {"f": "Stensen's Duct (Parotid gland) พบนิ่วกี่เปอร์เซ็นต์", "b": "6-20%", "t": "Sialendoscopy"}, {"f": "Sialendoscopy ทำได้กับนิ่วขนาดไม่เกินเท่าไร", "b": "4-5 มม.", "t": "Sialendoscopy"}, {"f": "NPO ก่อนทำ Sialendoscopy อย่างน้อยกี่ชั่วโมง", "b": "6-8 ชั่วโมง", "t": "Sialendoscopy"}, {"f": "Sialendoscope มีกี่ขนาด แต่ละขนาด working channel เท่าไร", "b": "4 ขนาด: 0.89mm (ไม่มี working channel) / 1.1mm (0.45mm) / 1.3mm (0.65mm) / 1.6mm (0.8mm)", "t": "Sialendoscopy"}, {"f": "Irrigation channel ของ Sialendoscope ทุกขนาดเท่ากันเท่าไร", "b": "0.2 mm", "t": "Sialendoscopy"}, {"f": "ความยาวรวมของ Sialendoscope และยี่ห้อ/รุ่นคืออะไร", "b": "140 cm / KARL STORZ Germany รุ่น 11582 A / distal angle 5 องศา", "t": "Sialendoscopy"}, {"f": "Stone Extraction basket มีกี่แบบ ขนาดเท่าไร", "b": "3 แบบ: ∅0.4mm 4wires / ∅0.6mm 3wires / ∅0.6mm 4wires", "t": "Sialendoscopy"}, {"f": "Biopsy Forceps และ Foreign Body Forceps ขนาดและความยาวเท่าไร", "b": "ทั้งคู่ ∅0.8mm ยาว 26.5 cm", "t": "Sialendoscopy"}, {"f": "สูตรน้ำยา Irrigation ที่ใช้คืออะไร", "b": "NSS 29 ml + Dexamethasone 1 ml 1 amp (5 mg) ผ่าน Syringe 1cc + Extension Tube XL-120", "t": "Sialendoscopy"}, {"f": "ระงับความรู้สึกและท่าที่ใช้ผ่าตัด Sialendoscopy คืออะไร", "b": "General Anesthesia (NTT) / Position Supine / Paint Povidone-iodine 10%", "t": "Sialendoscopy"}, {"f": "เปิดรูท่อน้ำลายใช้เครื่องมือใด", "b": "Salivary duct probe size 0000 ถึง size 8 ร่วมกับ Salivary duct Dilator", "t": "Sialendoscopy"}, {"f": "วัสดุเย็บแผลกรณีผ่าเปิดคืออะไร", "b": "Vicryl 4/0 17 mm", "t": "Sialendoscopy"}, {"f": "หลังผ่าตัด Sialendoscopy ต้องประคบเย็นนานเท่าไร", "b": "24 ชั่วโมงแรก", "t": "Sialendoscopy"}, {"f": "คำแนะนำกระตุ้นน้ำลายหลังผ่าตัดคืออะไร ช่วงเวลาใด", "b": "ดื่มน้ำมะนาว/น้ำผลไม้รสเปรี้ยว 2-3 วันแรกหลังผ่าตัด", "t": "Sialendoscopy"}, {"f": "Stent ที่ใส่ค้ำยันท่อน้ำลายหลุดเองได้ในกี่สัปดาห์", "b": "1-2 สัปดาห์ ไม่ต้องตกใจ เก็บ Stent ที่หลุดไว้ให้แพทย์ดู", "t": "Sialendoscopy"}, {"f": "ESI (Emergency Severity Index) แบ่งเป็นกี่ระดับ ช่วยเพิ่มอัตรารอดชีวิตกี่เปอร์เซ็นต์", "b": "5 ระดับ (Resuscitation / Emergency / Urgent / Semi-Urgent / Non-Urgent) / เพิ่มอัตรารอดชีวิตได้ร้อยละ 15", "t": "ENTEmergency"}, {"f": "Primary Triage กับ Secondary Triage ต่างกันอย่างไร", "b": "Primary = รวบรวมข้อมูลจากประเมินทางกายภาพ ไม่ต้องตรวจละเอียด / Secondary = ประเมินผู้ป่วยอย่างละเอียด", "t": "ENTEmergency"}, {"f": "ปัญหาหลัก 3 ด้านของ Upper Airway Obstruction คืออะไร", "b": "Airway inadequate / Ventilation inadequate / Oxygenation inadequate", "t": "ENTEmergency"}, {"f": "Stridor คืออะไร", "b": "เสียงผิดปกติจาก turbulent airflow ผ่านทางเดินหายใจที่อุดกั้นบางส่วน ได้ยินตอนหายใจเข้าหรือออก", "t": "ENTEmergency"}, {"f": "ENT.SI targeted response time คือเท่าไร", "b": "ต้องได้แผนการรักษาภายใน 30 นาที และเจาะคอ (tracheostomy) ภายใน 40 นาที", "t": "ENTEmergency"}, {"f": "Code D delta คืออะไร ติดต่อทางไหน", "b": "Difficult Airway Code สายด่วน VPN 09-5289", "t": "ENTEmergency"}, {"f": "Code D delta แบ่ง D1 กับ D2 เป็นใคร", "b": "D1 = แพทย์ประจำบ้านวิสัญญีปี 2 (code A2) / D2 = แพทย์ประจำบ้าน ENT ปี 1 (emergency ที่ 1)", "t": "ENTEmergency"}, {"f": "MEWS-UAO algorithm ก่อนเข้า Difficult Airway Code ให้ยาอะไร ขนาดเท่าไร", "b": "Dexamethasone 100 mg แล้วตามด้วย 20 mg ทุก 6 ชั่วโมง ร่วมกับ Antibiotics", "t": "ENTEmergency"}, {"f": "Needle cricothyroidotomy ใช้เข็มเบอร์อะไร ต่อกับอุปกรณ์อะไร ได้เวลาเท่าไรก่อน CO2 คั่ง", "b": "เข็มเหล็กเบอร์ 14 ผ่าน cricothyroid membrane ต่อกับ self-inflating bag / ได้ adequate oxygenation ~30 นาที", "t": "ENTEmergency"}, {"f": "Tracheostomy skin incision อยู่ตำแหน่งใด ยาวเท่าไร ใช้ยาชาอะไร", "b": "ต่ำกว่า cricoid ประมาณ 2 ซม. ยาว 2-3 ซม. (หรือ 3-5 ซม.) ใช้ 1% xylocaine with adrenaline", "t": "ENTEmergency"}, {"f": "ทารกอายุน้อยกว่า 1 ปี ทางเดินหายใจอุดตันเต็มที่ ทำอย่างไร", "b": "Five back blows สลับ Five chest thrusts (ห้ามใช้ Heimlich maneuver ในทารก)", "t": "ENTEmergency"}, {"f": "เด็กอายุมากกว่า 1 ปี ทางเดินหายใจอุดตันเต็มที่ ทำอย่างไร", "b": "Heimlich maneuver (subdiaphragmatic abdominal thrusts) / ถ้าไม่รู้สึกตัวให้ CPR กด 30 ครั้งสลับเป่า 2 ครั้ง", "t": "ENTEmergency"}, {"f": "Mortality rate ของ foreign body ในทางเดินหายใจเท่าไร", "b": "น้อยกว่าร้อยละ 1", "t": "ENTEmergency"}, {"f": "Kiesselbach's plexus (Little's area) ประกอบด้วยเส้นเลือดอะไรบ้าง เกี่ยวข้องกับอะไร", "b": "anterior ethmoid artery / superior labial artery / sphenopalatine artery / greater palatine artery รวม 4 เส้น เป็นตำแหน่ง anterior epistaxis บ่อยที่สุด", "t": "ENTEmergency"}, {"f": "Woodruff's plexus อยู่ตำแหน่งไหน เกี่ยวข้องกับ epistaxis ชนิดใด", "b": "แขนง sphenopalatine artery + ascending pharyngeal artery เหนือ middle turbinate / posterior epistaxis", "t": "ENTEmergency"}, {"f": "การเสียเลือดระดับ 2 และระดับ 3 (epistaxis/shock) มีค่าอะไรบ้าง", "b": "ระดับ 2: ร้อยละ15-30 (750-1500มล.) HR 100-120 capillary refill >3วิ / ระดับ 3: ร้อยละ30-40 (1500-2000มล.) HR>120 RR30-40 ปัสสาวะ5-15มล./ชม.", "t": "ENTEmergency"}, {"f": "First aid epistaxis ท่าไหน และวิธีลดอุณหภูมิที่ได้ผลดีที่สุดคืออะไร", "b": "บีบจมูก นั่งหลังตรง ก้มหน้าเล็กน้อย อ้าปากหายใจ / อมน้ำแข็งไว้ในปากลดอุณหภูมิได้เร็วกว่ากดจมูกด้วยน้ำแข็ง", "t": "ENTEmergency"}, {"f": "Cauterization ใน epistaxis ใช้สารอะไร ความเข้มข้นเท่าไร", "b": "Trichloroacetic acid 85% หรือ silver nitrate 10%", "t": "ENTEmergency"}, {"f": "Neuro Navigator หลักการทำงานเทียบกับระบบใด", "b": "GPS (Global Positioning System) — ดาวเทียมรับสัญญาณ คอมพิวเตอร์ประเมินผลแสดงตำแหน่งบนแผนที่", "t": "NeuroNavigator"}, {"f": "เครื่อง Navigator ที่ใช้ในหน่วยผ่าตัดประสาทศัลยศาสตร์ศิริราชมีกี่ยี่ห้อ อะไรบ้าง", "b": "2 ยี่ห้อ: Brain lab และ Medtronic Stealth Station (รุ่น S7, S8)", "t": "NeuroNavigator"}, {"f": "Reference Frame ชนิด Active กับ Passive ต่างกันอย่างไร", "b": "Active = ติดก่อนการผ่าตัด กับขาจับ Mayfield / Passive = ใช้ในสนามผ่าตัดที่ปลอดเชื้อ ร่วมกับ Passive ball", "t": "NeuroNavigator"}, {"f": "Z-touch คืออะไร", "b": "การลงทะเบียนแบบ touchless ด้วยการรับรู้อัตโนมัติของการสะท้อนแสงเลเซอร์โดยกล้องอินฟราเรด (อยู่ใน Probe แบบ Active)", "t": "NeuroNavigator"}, {"f": "สัญลักษณ์สีบนจอ Stealth Station เขียว เหลือง แดง หมายถึงอะไร", "b": "เขียว = camera เห็นเครื่องมือชัดเจน / เหลือง = ไม่เห็นแต่ยังทำงานได้ / แดง = ไม่เห็นและทำงานไม่ได้", "t": "NeuroNavigator"}, {"f": "ข้อห้ามในการทำความสะอาดและทำให้ปลอดเชื้อ Passive marker คืออะไร", "b": "ห้ามถู Passive marker ตอนทำความสะอาดด้วยแปรง / ห้ามทำ Steam Sterilization (Autoclave)", "t": "NeuroNavigator"}, {"f": "เลนส์กล้อง Navigator ต้องเช็ดด้วยอะไร จอภาพห้ามใช้น้ำยาประเภทใด", "b": "เลนส์ใช้ผ้าเช็ดเลนส์เฉพาะเท่านั้น / จอภาพห้ามใช้น้ำยา solvent (ลบ/ขจัดคราบ)", "t": "NeuroNavigator"}, {"f": "วิธีทำให้ปลอดเชื้อ (sterilization) ของอุปกรณ์ Navigator มีกี่วิธี อะไรบ้าง", "b": "3 วิธี: ETO (Ethylene oxide) / Sterrad (Hydro peroxide) / Steam Sterilization (Autoclave)", "t": "NeuroNavigator"}, {"f": "CSF Management/Shunt placement ใช้ระบบใด มีข้อดีอย่างไรเรื่อง head fixation", "b": "Electromagnetic system (AxiEM) แบบ No head pin", "t": "NeuroNavigator"}, {"f": "Hybrid OR คืออะไร", "b": "ห้องผ่าตัดที่ผสานเทคโนโลยีสร้างภาพขั้นสูง (CT/MRI) เข้ากับห้องผ่าตัดปกติ วินิจฉัย-รักษาในห้องเดียวแบบ one visit", "t": "NeuroNavigator"}, {"f": "ทีมสหสาขาในห้อง Hybrid OR ประกอบด้วยใครบ้าง", "b": "ศัลยแพทย์ / วิสัญญีแพทย์ / รังสีแพทย์ / พยาบาลห้องผ่าตัด", "t": "NeuroNavigator"}, {"f": "Workflow ของ Navigation มี 6 ขั้นตอนอะไรบ้าง ตามลำดับ", "b": "Pre-operative imaging → Planning → Registration → Real-time navigation → Tumor removal → Closure", "t": "NeuroNavigator"}, {"f": "ใครเป็นผู้ทำ registration navigator ในห้องผ่าตัด", "b": "ศัลยแพทย์ (ไม่ใช่พยาบาล) พยาบาลมีบทบาทสนับสนุน/เตรียมอุปกรณ์", "t": "NeuroNavigator"}, {"f": "VP Shunt กับ Omaya Shunt ต่างกันอย่างไร", "b": "VP Shunt ระบายน้ำไขสันหลังลงช่องท้องถาวร รักษา hydrocephalus / Omaya Shunt เป็นอ่างใต้หนังศีรษะใช้ให้ยาเคมีบำบัด/เจาะตรวจซ้ำ", "t": "NeuroNavigator"}, {"f": "Endoscopic Third Ventriculostomy (ETV) ใช้รักษาภาวะใด ทำงานอย่างไร", "b": "รักษา hydrocephalus ชนิดอุดตัน โดยเปิดทางเดินใหม่ให้น้ำไขสันหลังระบายออกได้เองโดยไม่ฝังอุปกรณ์", "t": "NeuroNavigator"}, {"f": "Stereotactic biopsy (Frame Link) ต่างจาก VarioGuide biopsy (Frameless) อย่างไร", "b": "Frame Link ต้องติดกรอบยึดศีรษะ (stereotactic frame) / VarioGuide ไม่ต้องใช้ frame แต่ใช้ sure track ร่วมกับ needle biopsy", "t": "NeuroNavigator"}, {"f": "DBS (Deep Brain Stimulation) ฝังสายกระตุ้นที่ตำแหน่งใด ใช้อุปกรณ์อะไรร่วมกัน", "b": "Globus Pallidus หรือ Subthalamic nucleus / ใช้ stereotactic frame ร่วมกับ O-Arm รักษา Parkinson's disease", "t": "NeuroNavigator"}, {"f": "AVM angiogram ระหว่างผ่าตัดฉีด contrast media เข้าทางหลอดเลือดใด ร่วมกับเครื่องมืออะไร", "b": "femoral artery (ขาหนีบ) ร่วมกับ fluoroscope (C-arm)", "t": "NeuroNavigator"}, {"f": "ETV เชื่อมต่อโครงสร้างใดกับใด ผ่านอะไร", "b": "The 3rd ventricle เชื่อมกับ Interpeduncular cistern ผ่าน Tuber cinereum", "t": "EndoscopicNeuro"}, {"f": "ETV ต้องเปิดเข้าไปใน membrane ใด", "b": "Liliequist membrane", "t": "EndoscopicNeuro"}, {"f": "ETV ใช้อุปกรณ์ใดถ่างขยาย floor of third ventricle ขนาดเท่าไร", "b": "Fogarty catheter No. 4 ถ่างขยายให้ได้ 4-5 มิลลิเมตร", "t": "EndoscopicNeuro"}, {"f": "ETV skin incision อยู่ตำแหน่งใด", "b": "หน้าต่อ coronal suture เล็กน้อย ห่างแนวกลาง 1.5 ซม.", "t": "EndoscopicNeuro"}, {"f": "ETV ใช้มุมกล้อง rigid telescope กี่องศา", "b": "0°, 30°, 70°", "t": "EndoscopicNeuro"}, {"f": "ท่านอนหลังผ่าตัด ETV คือท่าใด", "b": "นอนหงายศีรษะสูง 30 องศา ศีรษะ-คอตรง", "t": "EndoscopicNeuro"}, {"f": "ระดับตั้งจุดหยด EVD มาตรฐานอยู่ที่ใด", "b": "10 เซนติเมตรเหนือระดับรูหู (เทียบเท่า Foramen of Monro)", "t": "EndoscopicNeuro"}, {"f": "ตั้งจุดหยด EVD สูงเกินไปกับต่ำเกินไปเกิดผลอย่างไร", "b": "สูงเกิน = CSF ไม่ระบายออก / ต่ำเกิน = CSF ระบายมากเกิน เสี่ยง brain herniation", "t": "EndoscopicNeuro"}, {"f": "ภาวะแทรกซ้อนหลังผ่าตัด ETV มีอะไรบ้าง", "b": "CSF leakage / ความดันในกะโหลกศีรษะสูง / Subdural hematoma / Bradycardia", "t": "EndoscopicNeuro"}, {"f": "Gas distension media ที่ใช้ใน MIS คืออะไร ต้องระวังอะไร", "b": "Carbon dioxide (CO2) ต้องระวัง gas emboli", "t": "EndoscopicNeuro"}, {"f": "Fluid distension media คืออะไร อุณหภูมิเท่าไร", "b": "0.9% NSS หรือ Lactated Ringer's warm ถึง 37°C", "t": "EndoscopicNeuro"}, {"f": "ห้าม warm irrigation fluid ด้วยวิธีใด เพราะอะไร", "b": "Microwave และ Autoclave เพราะควบคุมอุณหภูมิไม่ได้ (uncontrolled)", "t": "EndoscopicNeuro"}, {"f": "Endoscopic transnasal ต่างจาก Sublabial transseptal อย่างไร", "b": "Endoscopic = ไม่มีแผลนอก, septum คงเดิม, ไม่ pack จมูก / Sublabial = มีแผล, เอา septum ออกแล้วใส่กลับ, pack 3-5 วัน", "t": "EndoscopicNeuro"}, {"f": "Pituitary adenoma อยู่ตำแหน่งใด ขนาดเท่าไร", "b": "Posterior fossa ขนาด ~1 ซม. เส้นผ่านศูนย์กลาง", "t": "EndoscopicNeuro"}, {"f": "Superior orbital fissure ผ่านเส้นประสาทใด (จาก ophtha แต่เชื่อมกับ neuro anatomy)", "b": "CN III, IV, VI และ CN V1", "t": "EndoscopicNeuro"}, {"f": "Superior oblique และ Lateral rectus เลี้ยงด้วยเส้นประสาทใด", "b": "SO = CN IV / LR = CN VI", "t": "OphthalmicAnatomy"}, {"f": "กล้ามเนื้อตาที่เหลือ (MR, SR, IR, IO, Levator) เลี้ยงด้วยเส้นประสาทใด", "b": "CN III", "t": "OphthalmicAnatomy"}, {"f": "ระยะเกาะกล้ามเนื้อ rectus จาก limbus เรียงลำดับอย่างไร (Spiral of Tillaux)", "b": "SR 7.7 mm > LR 6.9 mm > IR 6.5 mm > MR 5.5 mm", "t": "OphthalmicAnatomy"}, {"f": "Vertical rectus และ Oblique muscles มี action รองอย่างไร", "b": "Vertical rectus = adductor เสมอ / Oblique muscles = abductor เสมอ", "t": "OphthalmicAnatomy"}, {"f": "ขนาดกระจกตา (แนวนอน/แนวตั้ง) และกำลังหักเหแสงเท่าไร", "b": "แนวนอน 12 mm, แนวตั้ง 11 mm, refractive power 43 diopters", "t": "OphthalmicAnatomy"}, {"f": "กระจกตามีกี่ชั้น อะไรบ้าง", "b": "5 ชั้น: Epithelium, Bowman's layer, Stroma, Descemet membrane, Endothelium", "t": "OphthalmicAnatomy"}, {"f": "Precorneal tear film หนาเท่าไร มีกี่ชั้น", "b": "หนา 3-4 microns มี 3 ชั้น: Lipid / Aqueous / Mucin", "t": "OphthalmicAnatomy"}, {"f": "Axial length ปกติของลูกตาเท่าไร Myopia vs Hyperopia ต่างกันอย่างไร", "b": "23-25 mm / Myopia = AL ยาวกว่า, Hyperopia = AL สั้นกว่า", "t": "OphthalmicAnatomy"}, {"f": "Sclera บางที่สุดตรงไหน หนาเท่าไร แตกบ่อยที่ไหน", "b": "บางสุด 0.3 mm หลังจุดเกาะกล้ามเนื้อ / แตกบ่อยสุดที่ superonasal quadrant ใกล้ limbus", "t": "OphthalmicAnatomy"}, {"f": "Anterior chamber ลึกและมีปริมาตรเท่าไร", "b": "ลึก ~3 mm ปริมาตร ~200 μL", "t": "OphthalmicAnatomy"}, {"f": "เส้นทางไหลเวียนของ Aqueous humor เป็นอย่างไร", "b": "Posterior chamber → pupil → Anterior chamber → Trabecular meshwork → Schlemm canal (± uveoscleral pathway)", "t": "OphthalmicAnatomy"}, {"f": "IOP ปกติเท่าไร", "b": "10-16 mmHg", "t": "OphthalmicAnatomy"}, {"f": "Vitreous มีปริมาตรเท่าไร ประกอบด้วยอะไร", "b": "~4.0 mL ประกอบด้วย 99% น้ำ + 1% hyaluronic acid/collagen", "t": "OphthalmicAnatomy"}, {"f": "Retina มีกี่ชั้น", "b": "10 ชั้น = RPE + neurosensory retina", "t": "OphthalmicAnatomy"}, {"f": "Optic nerve แบ่งเป็นกี่ส่วน อะไรบ้าง", "b": "4 ส่วน: intraocular, intraorbital, intracanalicular, intracranial", "t": "OphthalmicAnatomy"}, {"f": "พยาธิสภาพที่ optic chiasm ทำให้เกิด visual field defect แบบใด", "b": "Bitemporal hemianopia", "t": "OphthalmicAnatomy"}, {"f": "Presbyopia เกิดในอายุเท่าไร กลไกอย่างไร", "b": "อายุ ≥ 40 ปี จาก lens แข็งตัวตามอายุ ภาพตกหลัง retina", "t": "OphthalmicAnatomy"}, {"f": "Eye drop 1 หยดมีปริมาตรเท่าไร cul-de-sac รับได้เท่าไร", "b": "1 หยด = 0.05 mL (50 µL) / cul-de-sac รับได้ 30 μL", "t": "OphthalmicAnatomy"}, {"f": "Neck triangles แบ่งขอบเขตอย่างไร", "b": "Anterior = SCM, mandible ล่าง, midline / Posterior = SCM, Clavicle, Trapezius", "t": "ClinicalENT"}, {"f": "Carotid sheath บรรจุโครงสร้างใดบ้าง", "b": "Common carotid artery, Internal jugular vein, Vagus nerve", "t": "ClinicalENT"}, {"f": "Neck lymph node แบ่งเป็นกี่ Area อะไรบ้าง", "b": "6 Area: I submental/submandibular, II upper jugular, III middle jugular, IV lower jugular, V posterior, VI central", "t": "ClinicalENT"}, {"f": "Parotid gland โครงสร้างสำคัญที่สุดที่ต้องระวังคืออะไร แตกแขนงแบบใด", "b": "Facial nerve แตกแขนงแบบ Pes anserinus 5 แขนง (temporal, zygomatic, buccal, marginal mandibular, cervical)", "t": "ClinicalENT"}, {"f": "Thyroglossal duct cyst มีลักษณะอย่างไร รักษาด้วยวิธีใด", "b": "Midline mass เคลื่อนตามการกลืน/แลบลิ้น รักษาด้วย Sistrunk's Operation", "t": "ClinicalENT"}, {"f": "Branchial cleft anomaly มีลักษณะอย่างไร", "b": "Lateral neck mass นุ่ม-ยืดหยุ่น อยู่ anterior to SCM รักษาด้วย excision", "t": "ClinicalENT"}, {"f": "Lymphatic malformation/cystic hygroma อยู่ตำแหน่งใด ให้ผลตรวจอะไร", "b": "Posterior triangle of neck ให้ transillumination positive", "t": "ClinicalENT"}, {"f": "TOETVA ข้อบ่งชี้และข้อห้ามคืออะไร", "b": "ข้อบ่งชี้: thyroid <8cm, nodule <6cm, PTC <2cm no ETE / ข้อห้าม: nodule >6cm หรือ vol >45ml, PTC>2cm/ETE, lateral LN mets, substernal goiter", "t": "ClinicalENT"}, {"f": "Modified radical neck dissection สงวนโครงสร้างใดไว้", "b": "Internal jugular vein, Spinal accessory nerve, Sternocleidomastoid muscle", "t": "ClinicalENT"}, {"f": "Hypopharynx มี 3 ส่วน (3P) อะไรบ้าง", "b": "Pyriform sinus, Postcricoid region, Posterior pharyngeal wall", "t": "ClinicalENT"}, {"f": "Laryngotracheal framework ประกอบด้วยอะไร", "b": "1 bone (Hyoid) + 9 cartilages (Epiglottis, Thyroid, Cricoid, คู่ Arytenoid/Cuneiform/Corniculate)", "t": "ClinicalENT"}, {"f": "Endolarynx แบ่งเป็นกี่ระดับ อะไรบ้าง", "b": "3 ระดับ: Supraglottis (epiglottis, false cord, ventricle) → Glottis (true cord) → Subglottis", "t": "ClinicalENT"}, {"f": "Paranasal sinuses มีกี่คู่ อะไรบ้าง", "b": "4 คู่: Frontal, Ethmoid, Maxillary, Sphenoid", "t": "ClinicalENT"}, {"f": "Ear ossicles เรียงลำดับจากนอกเข้าในอย่างไร", "b": "Malleus → Incus → Stapes", "t": "ClinicalENT"}, {"f": "Tracheostomy landmark อยู่ตรงไหน ใช้ยาชาอะไร", "b": "2 finger breadth ใต้ cricoid (หรือกึ่งกลาง cricoid-sternal notch) ใช้ lidocaine without adrenaline", "t": "ClinicalENT"}, {"f": "Sialendoscope มีสเปคอย่างไร", "b": "Distal angle 5 องศา, irrigation channel 0.2 mm, length 140 cm, mark ทุก 1 cm", "t": "ClinicalENT"}, {"f": "Tonsillectomy set ใช้อุปกรณ์พลังงานชนิดใดบ้าง", "b": "Cautery, Coblator, Harmonic scalpel", "t": "ClinicalENT"}, {"f": "Loaner Management มีวัตถุประสงค์หลักกี่ข้อ อะไรบ้าง", "b": "2 ข้อ / เตรียมเครื่องมือสะดวก-เป็นระเบียบ-มีประสิทธิภาพ / เตรียมเครื่องมือและ Prosthesis-Implants ถูกต้องครบถ้วนตามแผนรักษา", "t": "loaner"}, {"f": "มุมมองใหม่บริหาร Loaner ด้วย 4M คืออะไร", "b": "Man (คน) / Material (เครื่องมือ) / Method (กระบวนการ) / Time (เวลา)", "t": "loaner"}, {"f": "มุมมองใหม่ของ Loaner Management วางแผนล่วงหน้ากี่ชั่วโมงก่อนผ่าตัด", "b": "24 ชั่วโมง", "t": "loaner"}, {"f": "วงจรชีวิต Loan Instrument มีกี่ขั้นตอน เรียงลำดับอย่างไร", "b": "6 ขั้นตอน / วางแผน-จอง-รับ-ทำให้พร้อมใช้-ใช้-ส่งคืน (infinity loop)", "t": "loaner"}, {"f": "Receiving Check มี 5 หลักอะไรบ้าง", "b": "RIGHT / COMPLETE / CLEAN / FUNCTIONAL / TRACEABLE", "t": "loaner"}, {"f": "Handoff เครื่องมือ Loaner มี 3 จุด อะไรบ้าง", "b": "CSSD (Process Verification) / Store Room B (Control Hold) / Case Cart (Patient Assignment)", "t": "loaner"}, {"f": "Final OR Check ตรวจ 3 ประเด็นอะไร", "b": "Instrument vs Patient / Instrument vs Procedure / Implant-Prosthesis", "t": "loaner"}, {"f": "Final Pre-Op Check มี 5 คำถามอะไรบ้าง (ต้อง PASS ทั้งหมด)", "b": "Right Patient / Right Procedure / Right System / Complete / Ready", "t": "loaner"}, {"f": "ฉลากห่อ-กล่องเครื่องมือ Loaner ต้องมีข้อมูลกี่อย่าง อะไรบ้าง", "b": "5 อย่าง / ชื่อเครื่องมือ / ชื่อบริษัท / ชื่อแพทย์ผ่าตัด / วันที่ผ่าตัด / ลำดับห่อ-กล่อง เช่น 1/5", "t": "loaner"}, {"f": "Swiss Cheese Model ของ Loaner มี 3 ชั้นการป้องกันอะไรบ้าง", "b": "Vendor/Receiving Check (ครบถ้วน) / CSSD Check (ปราศจากเชื้อ) / OR Nurse Check (ตรงกับผู้ป่วย, barrier สุดท้าย)", "t": "loaner"}, {"f": "RACI ย่อมาจากอะไร", "b": "R = Responsible (ทำ) / A = Accountable (รับ/เจ้าภาพ) / C = Consulted (ปรึกษา) / I = Informed (รู้)", "t": "loaner"}, {"f": "หัวใจสำคัญของ RACI คืออะไร", "b": "ต้องมี A เพียงคนเดียวในแต่ละขั้นตอน เพื่อป้องกันปัญหาคิดว่าอีกคนทำ", "t": "loaner"}, {"f": "เครื่องมือ Loaner ต้องส่งมอบให้ CSSD ภายในเวลาใดของวันก่อนผ่าตัด", "b": "12:00 น.", "t": "loaner"}, {"f": "KPI ตัวอย่างของ Loaner: On-Time Delivery และ Completeness Rate เท่าไร", "b": "On-Time Delivery = 98% / Completeness Rate = 99%", "t": "loaner"}, {"f": "Missing Instrument ของ Loaner ลดลงจากปี 1 ถึงปี 3 เท่าไร", "b": "ปี 1 = 20 ครั้ง / ปี 2 = 12 ครั้ง / ปี 3 = 5 ครั้ง", "t": "loaner"}, {"f": "KPI Dashboard ของ Loaner แบ่งเป็นกี่ด้าน อะไรบ้าง", "b": "6 ด้าน / Completeness / Punctuality (SLA) / Safety / Readiness / Loss Rate / Efficiency", "t": "loaner"}, {"f": "5 Rights สรุปท้ายเรื่อง Loaner Management คืออะไร", "b": "Right Information / Right Instrument / Right Process / Right Person / Right Time", "t": "loaner"}, {"f": "Hand-off คืออะไรตามนิยาม JCAHO", "b": "กระบวนการสื่อสารตอบสนองทันทีในการส่งต่อข้อมูลสำคัญผู้ป่วยจากผู้ดูแลคนหนึ่งไปอีกคนหนึ่ง/ทีมหนึ่งไปอีกทีม เพื่อความต่อเนื่องและความปลอดภัย", "t": "handoff"}, {"f": "รายงาน hand-off ต้องมีคุณสมบัติ 5 ข้ออะไร", "b": "complete / concise / concrete / clear / accurate", "t": "handoff"}, {"f": "Barriers to concise communication มี 6 ข้ออะไรบ้าง", "b": "inattention / information overload / multitasking / noise / stress / time pressures", "t": "handoff"}, {"f": "ISBAR ย่อมาจากอะไร", "b": "Identification / Background / Situation / Assessment / Recommendation", "t": "handoff"}, {"f": "Operating Theatre Handoff มีกี่จุด อะไรบ้าง", "b": "5 จุด / Ward to Pre-op / Pre-op to Intra-op / During Intra-op / Intra-op to PACU / PACU to Ward", "t": "handoff"}, {"f": "ประเด็นที่ต้องบันทึกใน Patient Transfer Record มี 6 ข้ออะไร", "b": "MDR (ดื้อยา) / Other / Special concern-Recommendation / Assistance needed for transfer / Change of patient condition during transfer / Signature", "t": "handoff"}, {"f": "N/A ในเอกสาร Patient Transfer Record มีความหมายว่าอะไร", "b": "not applicable (นำมาใช้ไม่ได้กับกรณีนั้น) หรือ not available (ไม่มีข้อมูล/หาไม่ได้)", "t": "handoff"}, {"f": "ขั้นตอน Safe surgery เรียงลำดับอย่างไร", "b": "Briefing / Sign in / Timeout / Sign out / Debriefing", "t": "handoff"}, {"f": "ยกเลิกใช้ paper SSSC ตั้งแต่เมื่อไร", "b": "ม.ค.63", "t": "handoff"}, {"f": "เครื่องมือ SWITCH for OR Hand Off มาจากที่ไหน ปีใด", "b": "Providence St Vincent Medical Center, Portland, OR, USA / ปี 2013", "t": "handoff"}, {"f": "WP การสื่อสารด้วย ISBAR ของ HR คณะฯ ดำเนินการต่อเนื่องปีใด", "b": "2566, 2567, 2568", "t": "handoff"}, {"f": "วัตถุประสงค์ของ Communication-ISBAR มี 3 ข้ออะไร", "b": "ลดระยะเวลา / กระชับรัดกุม / เน้นประเด็นสำคัญชัดเจนเพื่อการดูแลต่อเนื่อง", "t": "handoff"}, {"f": "ตัวอย่าง hand off ในห้องผ่าตัดมีใครถึงใครบ้าง", "b": "RN circulator ถึง RN circulator / scrub person ถึง scrub person / surgeon ถึง scrub nurse", "t": "handoff"}, {"f": "Hand-off มีชื่อเรียกอื่นอะไรบ้าง", "b": "handover / sign-over / shift report", "t": "handoff"}, {"f": "แนวคิด cognitive aids เช่น handoff checklist มีประโยชน์อย่างไร", "b": "ลดความแปรปรวนในการส่งต่อการดูแล และช่วยตรวจสอบว่าพูดคุยประเด็นสำคัญครบ เพราะทุกคนลืมบางอย่างได้เสมอ", "t": "handoff"}, {"f": "โมเดล ERAS มองความสัมพันธ์ของ 3 ส่วนใดที่ส่งผลต่อ Risk ผู้ป่วย", "b": "Surgery – Patient – Anesthesia", "t": "eras"}, {"f": "โปรแกรม ERAS ของ รพ.ศิริราชเรียกว่าอะไร", "b": "Si-ERAS protocols", "t": "eras"}, {"f": "กราฟ Functional capacity เทียบ Time ของ ERAS มี 3 เส้นทางอะไรบ้าง", "b": "Traditional care / Enhanced recovery / Prehabilitation", "t": "eras"}, {"f": "ERAS แบ่งเป็นกี่ช่วงเวลา อะไรบ้าง", "b": "4 ช่วง / Preadmission / Preoperative / Intraoperative / Postoperative", "t": "eras"}, {"f": "PAC ลด case-cancellation rate ได้เท่าไรเทียบกับไม่มี PAC", "b": "มี PAC = 0.9% (95% CI 0.7-1.2%) / ไม่มี PAC = 5.9% (95% CI 5.6-6.3%)", "t": "eras"}, {"f": "DM: HbA1c เท่าไรต้อง refer for optimization", "b": "HbA1c > 8-8.5%", "t": "eras"}, {"f": "DM: HbA1c เท่าไรควรพิจารณา postpone elective surgery", "b": "HbA1c > 10%", "t": "eras"}, {"f": "DM: ควร maintain FBS ในช่วงใด", "b": "108-216 mg/dL", "t": "eras"}, {"f": "HTN target BP ในผู้ป่วย ERAS คือเท่าไร", "b": "BP < 130/80 mmHg (ตาม guideline ปี 2025)", "t": "eras"}, {"f": "เป้าหมาย core temperature ระหว่างผ่าตัดของ ERAS คือเท่าไร", "b": "มากกว่า 36 องศาเซลเซียส", "t": "eras"}, {"f": "วิธีป้องกัน hypothermia ตาม ERAS มี 3 อย่างอะไรบ้าง", "b": "warm mattress / warmed IV-irrigation fluids / blankets and wraps for the head", "t": "eras"}, {"f": "ทำไม ERAS แนะนำ Combined GA + Regional analgesia", "b": "เพื่อ facilitate fast-track recovery", "t": "eras"}, {"f": "GA แบบ ERAS ควรหลีกเลี่ยงอะไร", "b": "หลีกเลี่ยง anesthesia ที่ลึกเกินไป และ residual effect ของ hypnotic opioid muscle relaxants", "t": "eras"}, {"f": "Preoperative element ของ ERAS มีอะไรบ้าง", "b": "Selective bowel preparation / Minimize NPO time / Preoperative carbohydrate drinks / Premedication / Review information and knowledge", "t": "eras"}, {"f": "Postoperative element ของ ERAS มีอะไรบ้าง", "b": "Early removal of drain-tubes / Stop IV fluids / Early oral intake / Multimodal opioid-sparing pain control / Early mobilization / Postdischarge follow-up", "t": "eras"}, {"f": "Frontal lobe เกี่ยวข้องกับหน้าที่ใดเป็นหลัก", "b": "Executive function: คิดวิเคราะห์ / decision making / การยับยั้งอารมณ์", "t": "neuro"}, {"f": "รอยโรค frontal lobe ด้านพฤติกรรมทำให้เกิดอาการอะไร", "b": "Disinhibition ขาดการยับยั้งชั่งใจ หุนหันพลันแล่น พูดหยาบคาย ละเลยสุขอนามัยส่วนตัว", "t": "neuro"}, {"f": "Motor homunculus: ส่วนใดของร่างกายมีพื้นที่แทนบนสมองใหญ่ที่สุด", "b": "มือ (รองลงมาคือกล้ามเนื้อใบหน้า)", "t": "neuro"}, {"f": "รอยโรค motor strip ทำให้อ่อนแรงด้านใดเทียบกับตำแหน่งรอยโรค", "b": "ด้านตรงข้าม (contralateral)", "t": "neuro"}, {"f": "Spasticity เกิดขึ้นเมื่อใดหลังรอยโรค motor strip", "b": "ระยะหลัง (ช่วงแรกเป็น flaccid ก่อน)", "t": "neuro"}, {"f": "Broca's aphasia มีลักษณะอย่างไร", "b": "พูดไม่ออกพูดติดขัดไม่เป็นประโยค (agrammatism) แต่เข้าใจภาษาที่ได้ยินดี", "t": "neuro"}, {"f": "Wernicke's aphasia มีลักษณะอย่างไร", "b": "พูดคล่อง (fluent) แต่รับรู้-แปลความหมายภาษาไม่ได้ ฟังไม่รู้เรื่อง", "t": "neuro"}, {"f": "Global aphasia เกิดจากรอยโรคใด", "b": "รอยโรคกว้างครอบคลุมทั้ง Broca's area และ Wernicke's area", "t": "neuro"}, {"f": "คนถนัดขวาส่วนใหญ่สมองซีกเด่นด้านภาษาอยู่ด้านใด", "b": "ด้านซ้าย เกือบร้อยเปอร์เซ็นต์", "t": "neuro"}, {"f": "รอยโรคสมองซีกไม่เด่น (non-dominant, parietal) มีอาการเด่นอะไร", "b": "Neglect syndrome (hemispatial neglect) / Agnosia / Anosognosia / Astereognosis", "t": "neuro"}, {"f": "Neglect syndrome ทดสอบด้วยวิธีใด", "b": "Clock Drawing Test: เลข 1-12 กระจุกด้านตรงข้ามกับรอยโรค", "t": "neuro"}, {"f": "Gerstmann syndrome (dominant hemisphere parietal) มีอาการอะไรบ้าง", "b": "Agraphia / Acalculia / Finger agnosia / Left-right disorientation (อาจมี Alexia, Apraxia ร่วม)", "t": "neuro"}, {"f": "Hippocampus (temporal lobe) มีหน้าที่เกี่ยวกับอะไร และชื่อมาจากอะไร", "b": "ความจำระยะสั้น/ความจำเรื่องใหม่ / ชื่อจากภาษากรีกแปลว่าม้าน้ำ", "t": "neuro"}, {"f": "Amygdala เกี่ยวข้องกับอะไร และถูกควบคุมโดยอะไร", "b": "อารมณ์และสัญชาตญาณดั้งเดิม (ความก้าวร้าว) ถูกควบคุมโดย frontal lobe", "t": "neuro"}, {"f": "รอยโรคที่ Meyer's loop ทำให้เกิดอาการอะไร", "b": "Quadrantanopia: เห็นภาพแหว่งประมาณ 1 ใน 4 ของลานสายตาฝั่งตรงข้าม", "t": "neuro"}, {"f": "Basal ganglia ทำหน้าที่อะไร และรอยโรคทำให้เกิดอาการอะไร", "b": "ยับยั้งระบบประสาทไม่ให้ทำงานมากเกินไป / รอยโรคที่ subthalamic nucleus ทำให้เคลื่อนไหวมากผิดปกติควบคุมไม่ได้ (ballism/chorea-like)", "t": "neuro"}, {"f": "Diencephalon ประกอบด้วยอะไร และแต่ละส่วนทำหน้าที่อะไร", "b": "Thalamus (รับความรู้สึก/เคลื่อนไหว) + Hypothalamus (ระบบประสาทอัตโนมัติ ควบคุมอุณหภูมิ ต่อมไร้ท่อ)", "t": "neuro"}, {"f": "รอยโรคที่ MLF (medial longitudinal fasciculus) ในก้านสมองทำให้เกิดภาวะใด", "b": "Internuclear ophthalmoplegia (INO)", "t": "neuro"}, {"f": "ตำแหน่ง motor area สัมพันธ์กับ coronal suture อย่างไร?", "b": "หลัง coronal suture ประมาณ 4 ซม. = ตำแหน่ง motor area", "t": "Neurology"}, {"f": "Pterion คืออะไร และทำไมอันตราย?", "b": "กระดูกบางที่สุดบริเวณ temporal squama มี middle meningeal artery วิ่งผ่าน / ถ้าแตกอาจถึงตาย", "t": "Neurology"}, {"f": "ร่องสมองหลัก 2 เส้นที่แบ่ง lobe คืออะไร?", "b": "Central sulcus (แบ่ง frontal-parietal) / Sylvian fissure (แบ่ง frontal-temporal)", "t": "Neurology"}, {"f": "Omega sign บน MRI ใช้ทำอะไร?", "b": "Landmark หาตำแหน่ง motor area รูปร่างคล้ายตัวโอเมก้ากลับด้าน", "t": "Neurology"}, {"f": "Motor pathway กับ sensory pathway cross midline ต่างกันตรงไหน?", "b": "Motor cross ที่ base of skull / sensory cross ที่ระดับ spinal cord ด้านล่าง — ใช้ location รอยโรค", "t": "Neurology"}, {"f": "Uncal herniation ตรวจร่างกายพบอะไร?", "b": "Pupil โตข้างเดียวกับรอยโรค (กด midbrain) + อ่อนแรงฝั่งตรงข้าม (กด corticospinal tract) / เป็น herniation ชนิดเดียวที่แยกได้ชัดเจน", "t": "Neurology"}, {"f": "Brain tumor ส่วนใหญ่ทำให้เกิด edema ชนิดใด?", "b": "Vasogenic edema (จาก blood brain barrier เสีย)", "t": "Neurology"}, {"f": "Gerstmann syndrome ประกอบด้วยอาการอะไรบ้าง (4 อย่าง)?", "b": "Acalculia / Finger agnosia / Left-right disorientation / Agraphia-agnosia", "t": "Neurology"}, {"f": "Schwannoma ต่างจาก Neurofibroma อย่างไร?", "b": "Schwannoma = เนื้องอกปลอกหุ้มเส้นประสาท (เส้นประสาทอาจยังปกติ) / Neurofibroma = เนื้องอกตัวเส้นประสาทเอง (มักเสียการทำงานก่อนรักษา)", "t": "Neurology"}, {"f": "NF1 NF2 คืออะไร?", "b": "Neurofibromatosis — กลุ่มพันธุกรรมที่มีเนื้องอกเส้นประสาทหลายตำแหน่ง", "t": "Neurology"}, {"f": "Acoustic neuroma ขนาดเท่าใดพิจารณา radiosurgery แทนผ่าตัด?", "b": "ไม่เกิน 2 ซม. และการได้ยินยังดี", "t": "Neurology"}, {"f": "การทำ awake craniotomy จำเป็นสำหรับ function ใดเป็นพิเศษ?", "b": "Language (motor/sensory ทดสอบได้ทั้ง awake หรือ asleep) เพราะ 1 ภาษา = 1 area สมอง", "t": "Neurology"}, {"f": "MR spectroscopy (MRS) ใช้แยกอะไร?", "b": "Peak สารเคมีสูง = เซลล์มีชีวิต / peak ต่ำหรือ flat = necrosis (เนื้อตาย)", "t": "Neurology"}, {"f": "Aneurysm rupture มีอัตราเสียชีวิตทันทีเท่าใด และ vasospasm เกิดช่วงใด?", "b": "เสียชีวิตทันที ~30% / ในผู้รอด 2 ใน 3 ครึ่งหนึ่งมี permanent deficit / vasospasm เกิดวันที่ 3-21", "t": "Neurology"}, {"f": "Surgical clipping vs endovascular coiling ใช้เวลาต่างกันอย่างไร?", "b": "Clipping 4-5 ชั่วโมง / Coiling 1-2 ชั่วโมง (ในมือผู้ชำนาญ)", "t": "Neurology"}, {"f": "AVM endovascular embolization มีโอกาสสำเร็จเท่าใด?", "b": "ประมาณ 20-30%", "t": "Neurology"}, {"f": "Meningioma ได้เลือดเลี้ยงจากเส้นเลือดใด ต่างจากเนื้อสมองอย่างไร?", "b": "External carotid artery (เยื่อสมอง) ส่วนเนื้อสมองใช้ internal carotid artery / คนละระบบ ทำให้ผ่าตัด preserve เนื้อสมองได้ดี", "t": "Neurology"}, {"f": "Broca's area เสีย vs Wernicke's area เสีย ต่างกันอย่างไร?", "b": "Broca เสีย = ฟังรู้เรื่องแต่พูดไม่ได้ / Wernicke เสีย = พูดคล่อง (fluent) แต่ comprehension เสีย ตอบไม่ตรงคำถาม", "t": "Neurology"}, {"f": "มดลูก (uterus) ขนาดและน้ำหนักเท่าไร?", "b": "8×6×4 ซม. หนัก 45-55 กรัม", "t": "OBGYNPeriop"}, {"f": "ท่อนำไข่ (fallopian tube) ยาวเท่าไร แบ่งเป็นกี่ส่วน?", "b": "ยาว 8-14 ซม. / แบ่ง 4 ส่วน: interstitial part - isthmus - ampulla - fimbria", "t": "OBGYNPeriop"}, {"f": "รังไข่ (ovary) ขนาดเท่าไร?", "b": "3.5×2.5×1.5 ซม.", "t": "OBGYNPeriop"}, {"f": "ท่อเปิดของ Bartholin gland อยู่ตำแหน่งใดของ vestibule และขนาดต่อมเท่าไร?", "b": "เปิดที่ 4 และ 8 นาฬิกา / ขนาดต่อม 0.5-1 ซม.", "t": "OBGYNPeriop"}, {"f": "Follicular phase และ Luteal phase ยาวนานเท่าไร?", "b": "Follicular 10-14 วัน / Luteal 12-14 วัน", "t": "OBGYNPeriop"}, {"f": "ลำดับเหตุการณ์สำคัญของ ovulatory phase ตามเวลา?", "b": "เอสโตรเจน >200 pg/ml นาน 50 ชม. → LH สูงสุดภายใน 14-24 ชม. → ovulation หลัง LH surge 34-36 ชม.", "t": "OBGYNPeriop"}, {"f": "ลำดับพัฒนาการวัยสาวตามปกติ 4 ขั้น?", "b": "Growth spurt → Thelarche → Pubarche → Menarche", "t": "OBGYNPeriop"}, {"f": "Hysterectomy Type I ถึง V คืออะไร?", "b": "I=simple / II=modified radical / III=radical / IV=extended radical / V=partial exenteration", "t": "OBGYNPeriop"}, {"f": "Staging of Laparoscopic Hysterectomy (0-5) หมายถึงอะไร?", "b": "Stage 0-5 ตามขั้นตอนที่ทำผ่านกล้องก่อนเปลี่ยนเป็น vaginal hysterectomy (เลขมากขึ้น = ทำผ่านกล้องมากขึ้นก่อน)", "t": "OBGYNPeriop"}, {"f": "ปัจจัยเสี่ยงหัวใจกลุ่มสูงต่อการผ่าตัดมีอะไรบ้าง?", "b": "Unstable coronary syndrome / Severe valvular heart disease / Significant arrhythmia / Decompensated CHF / Dilated cardiomyopathy", "t": "OBGYNPeriop"}, {"f": "Postop gynecologic surgery แบ่งการเฝ้าระวังตามช่วงเวลาใด?", "b": "48 ชั่วโมงแรก (เฝ้าระวังภาวะแทรกซ้อนจากผ่าตัด/ยาสลบ) vs หลัง 48 ชม. (atelectasis, pneumonia, UTI, DVT)", "t": "OBGYNPeriop"}, {"f": "Emergency cesarean section ต้องทำ DDI ภายในเวลาเท่าไร?", "b": "≤30 นาที (code BLUE)", "t": "OBGYNPeriop"}, {"f": "Left lateral tilt ใช้มุมเอียงเท่าไร และป้องกันอะไร?", "b": "เอียงซ้าย 15 องศา ป้องกัน Supine Hypotensive Syndrome จากมดลูกกดทับ IVC", "t": "OBGYNPeriop"}, {"f": "อัตราการบาดเจ็บอวัยวะข้างเคียงในผ่าตัดนรีเวช เรียงจากมากไปน้อย?", "b": "Bladder 1-2% > Bowel 0.1-1% > Ureter 0.1-0.5%", "t": "OBGYNPeriop"}, {"f": "DVT ในมะเร็งรังไข่กลุ่มเลาะต่อมน้ำเหลืองพบได้เท่าไร?", "b": "17-38%", "t": "OBGYNPeriop"}, {"f": "ความเข้มข้น Chlorhexidine ใช้ต่างกันอย่างไรตามบริบท?", "b": "2% ทั่วไป / 0.5% ช่องคลอด / 2% in IPA70% สำหรับ morbid obesity / 4% scrub", "t": "OBGYNPeriop"}, {"f": "Aldrete Score เกณฑ์ discharge ต้องได้เท่าไร?", "b": "≥9 คะแนน", "t": "OBGYNPeriop"}, {"f": "ISBAR ย่อมาจากอะไร?", "b": "Identify - Situation - Background - Assessment - Recommendation", "t": "OBGYNPeriop"}, {"f": "Da Vinci เปิดตัวปีใด และ FDA อนุมัติปีใด?", "b": "เปิดตัว 1999 / FDA อนุมัติ 2000 (ครอบคลุม General, Urology, Gynecologic)", "t": "RoboticGYN"}, {"f": "หุ่นยนต์ตัวแรกที่ทำ gynecological surgery คือใคร ปีใด?", "b": "ZEUS ปี 1997 (reconnect fallopian tubes, Ohio, USA)", "t": "RoboticGYN"}, {"f": "US-FDA อนุมัติ Da Vinci ใช้ในหัตถการนรีเวชปีใด?", "b": "ปี 2005", "t": "RoboticGYN"}, {"f": "หุ่นยนต์ตัวแรกที่ทำ brain biopsy คือใคร ปีใด?", "b": "PUMA 560 ปี 1988", "t": "RoboticGYN"}, {"f": "Da Vinci Xi มีแขนกลกี่แขน และส่วนประกอบหลัก 3 ส่วนคืออะไร?", "b": "4 แขน / Surgeon Console + Patient Side Cart + Vision System", "t": "RoboticGYN"}, {"f": "Da Vinci generation ใดไม่รับรองใช้ในหัตถการนรีเวช?", "b": "Da Vinci SP (Gen4, พ.ค. 2018) ใช้เฉพาะ single-port urological/transoral เท่านั้น", "t": "RoboticGYN"}, {"f": "Da Vinci generation ใดได้ FDA clear สำหรับหัตถการ GYN?", "b": "Da Vinci S (IS2000) ปี 2005", "t": "RoboticGYN"}, {"f": "SynchroSeal และ Vessel Sealer Extend seal หลอดเลือดขนาดเท่าไร?", "b": "SynchroSeal ≤5mm avg <2 วินาที / Vessel Sealer Extend ≤7mm avg <3 วินาที", "t": "RoboticGYN"}, {"f": "Endowrist instrument หมุนได้กี่องศา กี่ทิศทาง?", "b": "หมุนได้ 360 องศา 7 ทิศทาง", "t": "RoboticGYN"}, {"f": "ข้อห้ามการผ่าตัด robotic ทางตา/สมองมีอะไรบ้าง?", "b": "Increased Intracranial Pressure / ต้อหินชนิดรุนแรง / Recent Retinal Detachment", "t": "RoboticGYN"}, {"f": "Postop RR หลัง robotic surgery ต้องมี urine output เท่าไร?", "b": "> 30 ml/hr", "t": "RoboticGYN"}, {"f": "งดมีเพศสัมพันธ์หลัง robotic surgery นานเท่าไร?", "b": "6 ถึง 8 สัปดาห์", "t": "RoboticGYN"}, {"f": "Discharge/spotting ปกติหลังผ่าตัดนานเท่าไรก่อนถือเป็น red flag?", "b": "2-5 วัน", "t": "RoboticGYN"}, {"f": "ไข้ระดับใดถือเป็น red flag หลัง robotic surgery?", "b": "100-101°F (37.5-38.3°C) ขึ้นไป", "t": "RoboticGYN"}, {"f": "Common Peroneal Nerve injury ทำให้เกิดอาการอะไร?", "b": "ชาด้านข้างขาและข้อเท้า พร้อม Foot drop", "t": "RoboticGYN"}, {"f": "Siriraj Hospital ทำ robotic surgery สะสมกี่ราย (2007-2019 และ 2024)?", "b": "2007-2019 อย่างน้อย 2,500 ราย / 2024 ครบ 5,000 ราย (เริ่ม Da Vinci Xi ก.ค. 2021)", "t": "RoboticGYN"}, {"f": "สัดส่วนโรงพยาบาล GYN residency program ใหญ่ใน US ที่ใช้ Da Vinci เท่าไร?", "b": "92% (46 จาก 50 แห่ง)", "t": "RoboticGYN"}, {"f": "การศึกษา Lim PC พบ Da Vinci RAS มี postop complication และ length of stay เท่าไรเทียบ open?", "b": "RAS complication 6.3% vs open 21% / LOS RAS 1.37±1.1 วัน vs open 3.0±1.6 วัน", "t": "RoboticGYN"}, {"f": "ยาขยายม่านตาชนิดใดออกฤทธิ์เร็วและหมดฤทธิ์เร็วที่สุด?", "b": "Tropicamide 1% (Mydriacyl) onset 30 นาที / duration 5-6 ชม.", "t": "OphthalmicNursing"}, {"f": "Cycloplegic ที่ออกฤทธิ์นานที่สุดคือตัวใด นานเท่าไร?", "b": "Atropine sulfate 1% / duration 2 สัปดาห์", "t": "OphthalmicNursing"}, {"f": "Phenylephrine HCl (mydriatic) จัดเป็นกลุ่มยาอะไร และ onset/duration เท่าไร?", "b": "Sympathomimetic / onset 30 นาที / duration 2-3 ชม.", "t": "OphthalmicNursing"}, {"f": "ยาชาเฉพาะที่ Tetracaine 0.5% onset/duration เท่าไร?", "b": "onset 30-60 วินาที / duration 15-30 นาที", "t": "OphthalmicNursing"}, {"f": "สูตรผสมขยายม่านตา 1% mydriacyl : 10% phenylephrine อัตราส่วนเท่าไร?", "b": "3:1", "t": "OphthalmicNursing"}, {"f": "ขนาดรูม่านตาที่ dilated เต็มที่ประมาณเท่าไร?", "b": "8-9 มม.", "t": "OphthalmicNursing"}, {"f": "Lidocaine (xylocaine) แบบ infiltration onset/duration เท่าไร?", "b": "onset 5 นาที / duration 1-2 ชม.", "t": "OphthalmicNursing"}, {"f": "Bupivacaine (marcaine) duration เท่าไร และผสมกับอะไรได้?", "b": "duration 6-10 ชม. / ผสม xylocaine อัตราส่วน 1:1", "t": "OphthalmicNursing"}, {"f": "Viscoelastic agent มีหน้าที่และผลข้างเคียงอะไร?", "b": "ปกป้อง corneal endothelium ลดการสูญเสียเซลล์ รักษาปริมาตรลูกตา / ผลข้างเคียงเพิ่ม intraocular pressure", "t": "OphthalmicNursing"}, {"f": "Miotic agent แบบ intracameral มีตัวใดบ้าง ออกฤทธิ์อย่างไร?", "b": "Miochol-E (acetylcholine chloride) และ Miostat (carbachol) / ออกฤทธิ์ทันที", "t": "OphthalmicNursing"}, {"f": "Vancomycin intracameral ใช้ขนาดเท่าไร ครอบคลุมเชื้ออะไร?", "b": "1mg/0.1cc / ครอบคลุม gram-positive", "t": "OphthalmicNursing"}, {"f": "Acetazolamide (Diamox) รูปแบบและขนาดที่ใช้เท่าไร?", "b": "Tab. 125-250 mg", "t": "OphthalmicNursing"}, {"f": "Antifibrotic agent ที่ใช้ใน glaucoma surgery มีอะไรบ้าง ขนาดเท่าไร?", "b": "Mitomycin-C 2 mg / 5-FU 5 mg", "t": "OphthalmicNursing"}, {"f": "Glaucoma Drainage Device มี 3 ชนิดคืออะไรบ้าง?", "b": "Ahmed Shunt / Baerveldt Shunt / Molteno Shunt", "t": "OphthalmicNursing"}, {"f": "Endophthalmitis คืออะไร ถือเป็นภาวะอย่างไร?", "b": "การติดเชื้อในลูกตา / ถือเป็นภาวะฉุกเฉินต้องรีบรักษา", "t": "OphthalmicNursing"}, {"f": "Flat chamber กับ Hypotony ต่างกันอย่างไร?", "b": "Flat chamber = over drainage หลัง trabeculectomy / Hypotony = แก้ด้วย wound suture หลัง retina surgery", "t": "OphthalmicNursing"}, {"f": "Early warning sign หลังผ่าตัดตาที่ต้องสอนผู้ป่วยมีอะไรบ้าง?", "b": "ตามัวลง / ปวดตา / ตาแดง / มีขี้ตา", "t": "OphthalmicNursing"}, {"f": "Povidone-iodine solution เตรียมผิวก่อนผ่าตัดตาความเข้มข้นเท่าไร?", "b": "5%", "t": "OphthalmicNursing"}, {"f": "Pressure Injury แบ่งเป็นกี่ระดับ และมีลักษณะพิเศษกี่แบบที่ระบุระดับไม่ได้?", "b": "4 ระดับ (Stage 1-4) + 2 ลักษณะพิเศษ: Unstageable, DTPI", "t": "MEWSPressureInjury"}, {"f": "Blanching test ทำอย่างไร?", "b": "กดรอยแดงนาน 3 วินาที แล้วปล่อย ดูว่ารอยแดงจางหรือคงอยู่", "t": "MEWSPressureInjury"}, {"f": "Perioperative Pressure Injury ปรากฏอาการภายในกี่ชั่วโมงหลังผ่าตัด?", "b": "48-72 ชั่วโมง", "t": "MEWSPressureInjury"}, {"f": "OR Skin Prevention Bundle มีกี่องค์ประกอบ อะไรบ้าง?", "b": "4 องค์ประกอบ: Maintenance of normothermia (36-37.5°C) / Special padding / Positioning Devices / Polyurethane foam dressing", "t": "MEWSPressureInjury"}, {"f": "เกณฑ์ควบคุมอุณหภูมิผู้ป่วยใน OR Skin Prevention Bundle คือช่วงใด?", "b": "36°C - 37.5°C", "t": "MEWSPressureInjury"}, {"f": "KPI เป้าหมาย 3 ตัวชี้วัดของ MEWS ในการป้องกันแผลกดทับคืออะไร?", "b": "อัตราการใช้ MEWS ≥80% / แผลกดทับระดับ1 <2% / แผลกดทับตั้งแต่ระดับ2 =0%", "t": "MEWSPressureInjury"}, {"f": "ปัจจัยเสี่ยง Preop ที่ต้องพิจารณาร่วมกับ Operative time ≥3 ชม. มีอะไรบ้าง?", "b": "Position (Prone/Parkbench-Lateral/Lithotomy/Supine) / Age ≥62 / BMI <19 หรือ >40 / ASA class ≥3", "t": "MEWSPressureInjury"}, {"f": "MDRPI กับ MMPI ต่างกันอย่างไรในการระบุระดับ?", "b": "MDRPI (จากอุปกรณ์การแพทย์บนผิวหนัง) ระบุระดับได้เหมือน Pressure Injury / MMPI (เยื่อบุผิว) ระบุระดับไม่ได้", "t": "MEWSPressureInjury"}, {"f": "แรงไถล (Shear) เกิดจากแรง 2 ชนิดใดสวนทางกัน?", "b": "แรงโน้มถ่วงโลก และแรงเสียดสี (Friction)", "t": "MEWSPressureInjury"}, {"f": "แรงเสียดสี (Friction) เพียงอย่างเดียวทำให้เกิดแผลกดทับได้หรือไม่?", "b": "ไม่ได้ เป็นเพียงปัจจัยส่งเสริมเมื่อร่วมกับแรงกดและ/หรือแรงไถล", "t": "MEWSPressureInjury"}, {"f": "MARSI วินิจฉัยเมื่อมีอาการหลังลอกวัสดุยึดติดนานเท่าไร และเทคนิคลอกที่ถูกต้องคืออะไร?", "b": "≥30 นาที / Two finger technique ดึงตามแนวขน มุมไม่เกิน 45 องศา", "t": "MEWSPressureInjury"}, {"f": "Stage 1 ของแผลกดทับมีลักษณะอย่างไร?", "b": "ผิวหนังยังไม่ฉีกขาด มีรอยแดง และรอยแดงยังคงอยู่เมื่อกด (Non-blanchable erythema)", "t": "MEWSPressureInjury"}, {"f": "Stage 2 ของแผลกดทับมีลักษณะอย่างไร?", "b": "สูญเสียผิวหนังบางส่วน มองเห็นชั้นหนังแท้ ตุ่มน้ำใสหรือแตกแล้ว ไม่มี granulation/slough/eschar", "t": "MEWSPressureInjury"}, {"f": "DTPI มีลักษณะอย่างไร?", "b": "สีผิวเปลี่ยนเป็นแดงช้ำ/ม่วง ผิวหนังฉีกขาดหรือไม่ก็ได้ อาจมีตุ่มน้ำปนเลือด", "t": "MEWSPressureInjury"}, {"f": "ผลลัพธ์อัตราแผลกดทับระดับ 1 ปี 2569 (เม.ย.-มิ.ย.) เทียบเป้าหมายเป็นอย่างไร?", "b": "3.48% เกินเป้าหมาย <2%", "t": "MEWSPressureInjury"}, {"f": "การแบ่งระดับแผลกดทับอ้างอิงแนวทางใด?", "b": "EPUAP/NPIAP/PPPIA Clinical Practice Guideline 2025", "t": "MEWSPressureInjury"}, {"f": "เกณฑ์ขนาด AAA ที่ต้องพิจารณาผ่าตัดในเพศชายและหญิงคือเท่าไร?", "b": "ชาย >5.5 ซม. / หญิง >5.2 ซม.", "t": "VascularSurgery"}, {"f": "นิยาม AAA (Abdominal Aortic Aneurysm) คือขนาดเท่าไร?", "b": "เส้นผ่านศูนย์กลาง >3 ซม. หรือโป่งกว่าปกติ >50%", "t": "VascularSurgery"}, {"f": "EVAR anatomical criteria: Aortic neck length และ angulation เท่าไร?", "b": "Neck length >10-15 mm / เส้นผ่านศูนย์กลาง 18-32 mm / angulation <45-60 องศา", "t": "VascularSurgery"}, {"f": "ภาวะแทรกซ้อนของ EVAR มีอะไรบ้าง?", "b": "Endoleak / Secondary intervention / Conversion to open surgery / Graft migration / Graft limb occlusion / Groin wound complication", "t": "VascularSurgery"}, {"f": "Aortoiliac occlusive disease มี 2 สาเหตุหลักคืออะไร ต่างกันอย่างไร?", "b": "Atherosclerosis (สูบบุหรี่ เบาหวาน ความดันสูง ไขมันสูง) vs Peripheral arterial embolism (อายุน้อยกว่า อาการเฉียบพลัน)", "t": "VascularSurgery"}, {"f": "Intermittent claudication จาก atherosclerosis ทุเลาเมื่อพักกี่นาที?", "b": "10-15 นาที", "t": "VascularSurgery"}, {"f": "Aortobifemoral bypass กับ Axillobifemoral bypass ต่างกันอย่างไร?", "b": "Aortobifemoral = ผ่านหน้าท้อง ประสิทธิภาพสูงสุด (polyester knitted) / Axillobifemoral = ผ่าน axilla artery ไม่เปิดหน้าท้อง เหมาะผู้ป่วยหัวใจไม่ดี/ติดเชื้อช่องท้อง (PTFE ring)", "t": "VascularSurgery"}, {"f": "Contrast induced nephropathy นิยามด้วยค่า creatinine เพิ่มเท่าไร และห้ามใช้ contrast เกินเท่าไร?", "b": "Creatinine เพิ่ม >25% หรือ 0.5 mg/dl / ไม่ควรใช้ contrast เกิน 5 ml/kg", "t": "VascularSurgery"}, {"f": "หลังใส่ introducer สำหรับ endovascular femoro-popliteal ต้องให้ heparin ขนาดเท่าไร ควบคุม ACT เท่าไร?", "b": "Heparin 80/100 units/kg / ACT >250 วินาที", "t": "VascularSurgery"}, {"f": "Central venous catheter ชนิด Temporary กับ Permanent ต่างกันอย่างไร?", "b": "Temporary: 13-16-20 ซม. ไม่มี cuff <13 Fr / Permanent: ยาวถึง 36 ซม. มี cuff ถึง 15 Fr", "t": "VascularSurgery"}, {"f": "Heparin lock สำหรับ CVC ใช้ความเข้มข้นเท่าไร?", "b": "1000 unit/ml ปริมาณเท่า priming volume", "t": "VascularSurgery"}, {"f": "เกณฑ์ maturation ของ AVF (Rule of 6) มีอะไรบ้าง?", "b": "Diameter >6mm / Flow >600 ml/min / Depth <6mm / Duration >6 สัปดาห์", "t": "VascularSurgery"}, {"f": "ข้อบ่งชี้ทำ AV Graft คืออะไร?", "b": "ไม่มีหลอดเลือดเหมาะสมทำ AVF และต้องฟอกเลือดภายใน 6 สัปดาห์ (รอ AVF maturation ไม่ทัน)", "t": "VascularSurgery"}, {"f": "ลักษณะ GSV ที่ไม่เหมาะสมทำ RFA คืออะไรบ้าง?", "b": "GSV <2mm หรือ >15mm / Hx thrombophlebitis / tortuous GSV / GSV ใกล้ผิวหนัง / aneurysm ที่ SFJ", "t": "VascularSurgery"}, {"f": "หลัง venous stripping ต้องพันขานานเท่าไร แล้วเปลี่ยนถุงน่องนานเท่าไร?", "b": "พันขา 48 ชั่วโมง แล้วเปลี่ยนถุงน่องอย่างน้อย 1 สัปดาห์", "t": "VascularSurgery"}, {"f": "F.A.S.T. ที่สไลด์ระบุมีองค์ประกอบใดบ้าง และ TIA หายภายในกี่ชั่วโมง?", "b": "Face drooping / Arm weakness / Speech difficulty (สไลด์ไม่ได้ระบุความหมายตัว T) / TIA หายภายใน 24 ชั่วโมง", "t": "VascularSurgery"}, {"f": "Contrast agent ชนิด negative contrast คืออะไร มีข้อดีอย่างไรเทียบกับอากาศ?", "b": "Carbon dioxide (CO2) ดูดซึมง่ายกว่า เกิด spasm น้อยกว่า ฉีดเข้าเลือดได้ (อากาศห้ามฉีดเพราะเสี่ยง air embolism)", "t": "VascularSurgery"}, {"f": "Endarterectomy เหมาะกับผู้ป่วยแบบใด ข้อดี/ข้อเสียคืออะไร?", "b": "เหมาะกับ atherosclerosis อุดตันช่วงสั้น / ข้อดีไม่ใช้วัสดุเทียมลดติดเชื้อ / ข้อเสียไม่เหมาะกับผนังหลอดเลือดโป่งพอง", "t": "VascularSurgery"}];
+
+let order = CARDS.map((_, i) => i);
+(function(){
+  const sel = document.getElementById('tagFilter');
+  const all = document.createElement('option');
+  all.value = '__all__'; all.textContent = `ทุกวิชา (${CARDS.length} การ์ด)`;
+  sel.appendChild(all);
+  [...new Set(CARDS.map(c => c.t))].sort().forEach(t => {
+    const o = document.createElement('option');
+    o.value = t; o.textContent = `${t} (${CARDS.filter(c => c.t === t).length})`;
+    sel.appendChild(o);
+  });
+  sel.addEventListener('change', () => {
+    order = CARDS.map((_, i) => i).filter(i => sel.value === '__all__' || CARDS[i].t === sel.value);
+    pos = 0; flipped = false; render();
+  });
+})();
+let pos = 0;
+let flipped = false;
+
+const cardEl = document.getElementById('card');
+const frontText = document.getElementById('frontText');
+const backText = document.getElementById('backText');
+const progressText = document.getElementById('progressText');
+const progressFill = document.getElementById('progressFill');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const flipBtn = document.getElementById('flipBtn');
+const shuffleBtn = document.getElementById('shuffleBtn');
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function renderMarkdownBold(str) {
+  const escaped = escapeHtml(str);
+  return escaped.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+}
+
+function activeLabel() {
+  const sel = document.getElementById('tagFilter');
+  return (sel && sel.value !== '__all__') ? ` · ${sel.value}` : '';
+}
+
+function render() {
+  if (!order.length) { frontText.textContent = '—'; backText.textContent = '—'; return; }
+  const card = CARDS[order[pos]];
+  frontText.innerHTML = renderMarkdownBold(card.f);
+  backText.innerHTML = renderMarkdownBold(card.b);
+  progressText.textContent = order.length ? `การ์ด ${pos + 1}/${order.length}${activeLabel()}` : 'ไม่มีการ์ด';
+  progressFill.style.width = `${order.length ? ((pos + 1) / order.length) * 100 : 0}%`;
+  if (flipped) {
+    cardEl.classList.add('flipped');
+  } else {
+    cardEl.classList.remove('flipped');
+  }
+}
+
+function goNext() {
+  pos = (pos + 1) % CARDS.length;
+  flipped = false;
+  render();
+}
+
+function goPrev() {
+  pos = (pos - 1 + CARDS.length) % CARDS.length;
+  flipped = false;
+  render();
+}
+
+function toggleFlip() {
+  flipped = !flipped;
+  render();
+}
+
+function shuffleCards() {
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  pos = 0;
+  flipped = false;
+  render();
+}
+
+cardEl.addEventListener('click', toggleFlip);
+prevBtn.addEventListener('click', goPrev);
+nextBtn.addEventListener('click', goNext);
+flipBtn.addEventListener('click', toggleFlip);
+shuffleBtn.addEventListener('click', shuffleCards);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    e.preventDefault();
+    goPrev();
+  } else if (e.key === 'ArrowRight') {
+    e.preventDefault();
+    goNext();
+  } else if (e.key === ' ' || e.key === 'Enter') {
+    e.preventDefault();
+    toggleFlip();
+  }
+});
+
+render();
+</script>
+</body>
+</html>
